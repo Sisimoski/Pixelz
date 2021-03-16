@@ -1,0 +1,212 @@
+.NavbarFully{
+    height: 15vh;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    font-size: 1.8vw;
+    background-color: white;
+    color: black;
+    margin-bottom: 5%;
+}
+.navbarr{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 30;
+}
+.logo{
+    width: 30vh;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    margin-left: 10vw;
+}
+.loginicon{
+    width: 5vh;
+}
+.Products{
+    margin-left: 5vw;
+    margin-right: 5vw;
+    color: black;
+}
+.login{
+    margin-left: 50vw;
+    color: black;
+}
+@media (min-width: 1351px) {
+.NavOptions
+{
+    position: absolute;
+    top: 50%;
+    right: -5vw;
+    left: 0;
+    width: 800px;
+    display: table;
+    margin: 0 auto;
+    transform: translateY(-50%);
+    padding: 3vh;
+}
+.NavOptions a
+{
+    position: relative;
+    display: table-cell;
+    text-align: center;
+    color: #949494;
+    text-decoration: none;
+    
+    font-weight: bold;
+    transition: 0.2s ease color;
+}
+.NavOptions a:before, .NavOptions a:after
+{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 0.2s ease transform;
+}
+
+.NavOptions a:before
+{
+    top: -30px;
+    left: -30px;
+    width: 20px;
+    height: 20px;
+}
+
+.NavOptions a:after
+{
+    top: -20px;
+    left: -20px;
+    width: 30px;
+    height: 30px
+}
+
+.NavOptions a:nth-child(1):before
+{
+    background-color: yellow;
+}
+
+.NavOptions a:nth-child(1):after
+{
+    background-color: red;
+}
+
+.NavOptions a:nth-child(2):before
+{
+    background-color: #00e2ff;
+}
+
+.NavOptions a:nth-child(2):after
+{
+    background-color: #89ff00;
+}
+
+.NavOptions a:nth-child(3):before
+{
+    background-color: purple;
+}
+
+.NavOptions a:nth-child(3):after
+{
+    background-color: palevioletred;
+}
+
+#indicator
+{
+    position: absolute;
+    left: 0%;
+    bottom: 0;
+    width: 13vw;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    transition: 0.2s ease left;
+}
+
+.NavOptions a:hover
+{
+    color: #fff;
+}
+
+.NavOptions a:hover:before, .NavOptions a:hover:after
+{
+    transform: scale(1);
+}
+
+.NavOptions a:nth-child(1):hover ~ #indicator
+{
+    background: linear-gradient(130deg, yellow, red);
+}
+
+.NavOptions a:nth-child(2):hover ~ #indicator
+{
+    left: 14vw;
+    background: linear-gradient(130deg, #00e2ff, #89ff00);
+}
+
+.NavOptions a:nth-child(3):hover ~ #indicator
+{
+    left: 27vw;
+    background: linear-gradient(130deg, purple, palevioletred);
+}
+}
+@media (max-width: 1350px){
+    .NavOptions
+    {
+        width: 100%;
+        padding: 1vh;
+        background-color: white;
+    }
+    .NavOptions a
+    {
+        position: relative;
+        display: table-cell;
+        text-align: center;
+        color: #949494;
+        text-decoration: none;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        transition: 0.2s ease color;
+    }
+   
+    .Products{
+        margin-left: 0vh;
+        margin-right: 0vh;
+    }
+    .login{
+        width: 100%;
+        background-color: white;
+        margin-left: 10vw;
+        color: black;
+    }
+}
+@media (max-width: 1000px){
+    .NavOptions
+    {
+        width: 300;
+        padding:0px;
+        font-size: 3vw;
+    }
+    .NavOptions a
+    {
+        position: relative;
+        display: table-cell;
+        text-align: left;
+        color: black;
+        text-decoration: none;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        transition: 0.2s ease color;
+    }
+    .Aboutus{
+        margin-top: 5vw;
+    }
+    .login{
+        margin-left: 0;
+        color: grey;
+        font-size: 4vw;
+    }
+    .loginicon{
+        width: 0;
+        margin-left: -3vh;
+    }
+   
+}
