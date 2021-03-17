@@ -1,0 +1,18 @@
+.rightside{
+    float: right;
+    margin-right: 5%;
+    margin-top: 2%;
+}
+.leftside{
+    margin-left: 5%;
+    margin-top: 2%;
+    float: left;
+}
+.rightside img{
+    width: 5vw;
+}
+.footerContainer{
+    margin: auto;
+    width: 80%;
+    border-top: 5px solid black;
+}

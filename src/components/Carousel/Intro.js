@@ -10,7 +10,7 @@ function Intro() {
     return (
         <div className="karuzela">
             <Carousel fade>
-                <Carousel.Item interval={500}>
+                <Carousel.Item interval={2000}>
                     <img
                         className="photo"
                         src={baner}

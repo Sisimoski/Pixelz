@@ -10,6 +10,7 @@ import { ShoppingCart } from '@material-ui/icons';
 import "./style.css"
 const Product = ({ product, addProduct = () => { } }) => (
 
+
     <Card className="product-card">
         <CardActionArea>
             <CardMedia
