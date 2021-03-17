@@ -4,14 +4,22 @@
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-evenly;
-   border-top: 5px solid black;
    border-bottom: 5px solid black;
    width: 80%;
    margin: auto;
  
 }
+.napis{
+  width: 80%;
+  font-family: Comic Sans MS, Comic Sans, cursive;
+  font-size: 3vw;
+  border-top: 5px solid black;
+  text-align: center;
+  margin: auto;
+
+}
 .filters img{
-    width: 3vw;
+    width: 5vw;
 }
 .hexagon-wrapper {
     margin: auto;
@@ -21,7 +29,19 @@
     height: 15vw;
     cursor: pointer;
   }
-  
+  @media (max-width: 1000px){
+    .hexagon-wrapper {
+      margin: auto;
+      display: flex;
+      text-align: initial;
+      width: 30vw;
+      height: 30vw;
+      cursor: pointer;
+    }
+    .filters img{
+      width: 10vw;
+  }
+  }
   .hexagon {
     position: relative;
     width: 46%;

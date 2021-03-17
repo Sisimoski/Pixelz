@@ -54,3 +54,42 @@
   .product-card .custom-button svg {
     margin-right: 10px;
   }
+  .searchContainer{
+  width: 80%;
+  margin: auto;
+margin-top: 2vh;
+  }
+  .searchContainer form{
+  text-align: right;
+  }
+  .searchContainer input{
+    border-radius: 50px;
+    height: 5vh;
+    width: 22vh;
+    font-size: 2vh;
+  }
+  .searchContainer input:hover{
+    border: none;
+    border-bottom: 2px solid black;
+    border-radius: 0;
+    outline: none;
+    transition: 1s;
+  }
+  .searchContainer input:focus{
+    border: none;
+    outline: none;
+    border-radius: 0;
+    border-bottom: 2px solid black;
+  }
+  .searchContainer button{
+    border-radius: 50px;
+    margin-left: 0.5%;
+    width: 4.5vh;
+    height: 4.5vh;
+    border: none
+  }
+  .searchContainer button:hover{
+  background-color: black;
+  color: white;
+  transition: 1s;
+  }
