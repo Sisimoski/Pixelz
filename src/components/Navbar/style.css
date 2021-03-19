@@ -12,7 +12,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 30;
+    z-index: 10;
 }
 .logo{
     width: 40vh;
@@ -184,46 +184,37 @@
 
 .NavOptions a:nth-child(3):hover ~ #indicator
 {
-    left: 20vw;
+    left: 18vw;
     background: linear-gradient(130deg, purple, palevioletred);
 }
 }
 
 
-@media (max-width: 1480px){
+@media (max-width: 1400px){
     .NavOptions
     {
-      margin-left: 300px;
-      font-size: 15px;
+      margin-left: 350px;
+      font-size: 20px;
+      width: 30%;
     }
     .basketContainer{
-        margin-left: 310px;
-     margin-right: 70px;
+        margin-left: 350px;
+        width: 10%;
+        margin-right: 5vh;
+       
        }
-    .NavOptions a
-    {
-        position: relative;
-        display: table-cell;
-        text-align: center;
-        color: #949494;
-        text-decoration: none;
-        font-family: 'Lato', sans-serif;
-        font-weight: bold;
-        transition: 0.2s ease color;
-    }
-   
     .Products{
         margin-left: 0vh;
         margin-right: 0vh;
     }
-    .login{
-        width: 100%;
-        background-color: white;
-        margin-left: 10vw;
-        color: black;
+    .navbarr .btn1 {
+      margin-left: -10%;
+      
+        
     }
+ 
 }
-@media (max-width: 1000px){
+@media (max-width: 992px){
     .NavOptions
     {
         margin:0;
@@ -233,12 +224,16 @@
         background-color: white;
     }
     .basketContainer{
+        text-align: center;
         margin-left: 0;
      margin-right: 0;
      background-color: white;
+     width: 100%;
+     
        }
     .logo{
         width: 40vw;
+ 
     }
     .NavOptions a
     {
@@ -273,6 +268,7 @@
         font-size: 3vw;
         background-color: white;
         width: 100%;
+        margin-left: 0;
       }
       .navbarr .btn {
         font-family: 'Lato', sans-serif;
@@ -284,6 +280,7 @@
         font-size: 3vw;
         width: 100%;
         background-color: white;
+      
       }
       .navbarr .btn:hover,.navbarr .btn1:hover {
         animation: 0;
