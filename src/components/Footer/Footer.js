@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from "../../media/baner2.jpg"
+import logo from "../../media/baner3.png"
 import "./style.css";
 function Footer() {
     return (

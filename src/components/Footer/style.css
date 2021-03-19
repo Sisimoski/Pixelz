@@ -7,13 +7,14 @@
     margin-top: 2%;
     width: 10vh;
 }
+.leftside{
+    margin-left: 2%;
+}
 .footerContainer{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: auto;
-    width: 80%;
-    border-top: 5px solid black;
-    margin-bottom: 2%;
-    
+    width: 100%;
+    background: linear-gradient(90deg, rgba(203,137,137,1) 0%, rgba(85,63,170,1) 35%, rgba(10,12,112,0.8687850140056023) 100%);
 }
