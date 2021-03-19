@@ -11,12 +11,19 @@
 }
 .napis{
   width: 80%;
-  font-family: Comic Sans MS, Comic Sans, cursive;
-  font-size: 3vw;
-  border-top: 5px solid black;
+  font-family: Lato;
+  font-size: 2.5vw;
   text-align: center;
   margin: auto;
-
+}
+.napis p{
+  font-size: 1.5vw;
+}
+.podtekst{
+  font-size: 1vw;
+  text-align: center;
+  color: white;
+  font-family: 'Lato', sans-serif;
 }
 .filters img{
     width: 5vw;
