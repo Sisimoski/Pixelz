@@ -8,28 +8,29 @@ function Filters() {
     return (
         <>
             <div className="napis">
-                Choose Category
+                WYBIERZ PLATFORMĘ
+                <p className="tekst">Wybierz swoją ulubioną grę na swoją ulubioną platformę</p>
             </div>
             <div className="filters">
 
                 <div class="hexagon-wrapper">
                     <div class="hexagon">
-                        <i><img src={ikonax} /></i>
+                        <i><img src={ikonax} /><p className="podtekst">XBOX</p></i>
                     </div>
                 </div>
                 <div class="hexagon-wrapper">
                     <div class="hexagon">
-                        <i><img src={ikonaps} /></i>
+                        <i><img src={ikonaps} /><p className="podtekst">PLAYSTATION</p></i>
                     </div>
                 </div>
                 <div class="hexagon-wrapper">
                     <div class="hexagon">
-                        <i><img src={ikonapc} /></i>
+                        <i><img src={ikonapc} /><p className="podtekst">PC</p></i>
                     </div>
                 </div>
                 <div class="hexagon-wrapper">
                     <div class="hexagon">
-                        <i><img src={ikonans} /></i>
+                        <i><img src={ikonans} /><p className="podtekst">NINTENDO</p></i>
                     </div>
                 </div>
             </div>
