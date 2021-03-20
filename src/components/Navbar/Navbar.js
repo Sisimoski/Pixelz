@@ -13,12 +13,10 @@ const customStyles = {
     content: {
         top: '60%',
         left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
+        border: "none",
         background: '#black',
         transform: 'translate(-50%, -50%)',
-        width: '65%',
+        width: '60%',
         height: "67vh",
         zIndex: "5",
         overflow: "hidden",
@@ -58,18 +56,26 @@ function SNavbar({ basketItems, totalCost }) {
                             </Nav>
                         </div>
                         <div className="basketContainer">
-                            <div className="basket-wrapper">
-                                <IconButton
-                                    component={Link}
-                                    to="/basket"
-                                    aria-label="Show basket contents"
-                                    color="inherit"
-                                >
-                                    <Badge badgeContent={basketItems} color="secondary">
-                                        <ShoppingCart className="custom-basket" /><p className="koszyk">Koszyk</p>
-                                    </Badge>
-                                </IconButton>
-                            </div>
+                            {location.pathname === "/basket" ? (
+                                <div className="basket-wrapper">
+                                    <h2>
+                                        Total cost: <strong>{totalCost}</strong>
+                                    </h2>
+                                </div>
+                            ) : (
+                                <div className="basket-wrapper">
+                                    <IconButton
+                                        component={Link}
+                                        to="/basket"
+                                        aria-label="Show basket contents"
+                                        color="inherit"
+                                    >
+                                        <Badge badgeContent={basketItems} color="secondary">
+                                            <ShoppingCart className="custom-basket" /><p className="koszyk">Koszyk</p>
+                                        </Badge>
+                                    </IconButton>
+                                </div>
+                            )}
 
                         </div>
                         <form className="form-inline">

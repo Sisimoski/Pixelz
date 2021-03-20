@@ -29,6 +29,26 @@ const App = () => {
     setBasketData(response.cart);
   };
 
+  const RemoveItemFromBasket = async (itemId) => {
+    const response = await commerce.cart.remove(itemId);
+    setBasketData(response.cart);
+  };
+
+  const handleEmptyBasket = async () => {
+    const response = await commerce.cart.empty();
+    setBasketData(response.cart);
+  };
+
+  const updateProduct = async (productId, quantity) => {
+    const response = await commerce.cart.update(productId, { quantity });
+    setBasketData(response.cart);
+  };
+
+  const refreshBasket = async () => {
+    const newBasketData = await commerce.cart.refresh();
+    setBasketData(newBasketData);
+  };
+
   useEffect(() => {
     fetchProducts();
     fetchBasketData();
@@ -40,7 +60,11 @@ const App = () => {
       <Switch>
         <div>
           <header>
-            <Navbar basketItems={basketData.total_items} />
+            <Navbar basketItems={basketData.total_items} totalCost={
+              (basketData.subtotal &&
+                basketData.subtotal.formatted_with_symbol) ||
+              "00.00"
+            } />
           </header>
           <Route exact path="/">
             <main>
@@ -53,7 +77,11 @@ const App = () => {
           </Route>
           <Route exact path="/basket">
             <main>
-              <Basket />
+              <Basket
+                basketData={basketData}
+                updateProduct={updateProduct}
+                handleEmptyBasket={handleEmptyBasket}
+                RemoveItemFromBasket={RemoveItemFromBasket} />
             </main>
           </Route>
           <Route exact path="/register">
