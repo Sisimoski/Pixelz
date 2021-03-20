@@ -60,11 +60,11 @@
   border-left: none;
   border-right: none;
   background: rgba(32, 32, 32);
-  color: #ffd100;
+  color: blueviolet;
   outline: none;
 }
 .inputFields:hover {
-    background: rgba(255, 209, 0, 0.7);
+    background: rgba(255, 255, 255, 0.7);
     transition: background .5s;
 }
 
