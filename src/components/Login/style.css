@@ -1,0 +1,122 @@
+
+.signupSection {
+  background: url("../../media/pad.jpg");
+  background-repeat: round;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 64vh;
+  text-align: center;
+  display: flex;
+  color: white;
+  z-index: 10;
+}
+
+.info {
+  width: 40%;
+  background: rgba(243, 237, 249, 0.7);
+  padding: 100px 0px;
+  font-size: 2.5vw;
+  border-right: 5px solid rgba(30, 30, 30, .8);
+}
+ .info h2 
+  {
+    padding-top: 30px;
+    font-size: 2.8vw;
+    font-weight: 600;
+    color: rgb(32, 32, 32);
+  }
+
+  .icon 
+  {
+    font-size: 8em;
+    padding: 20px 0;
+    color: #ffd100;
+}
+
+.signupForm {
+  width: 60%;
+  display: flex;
+  padding: 120px 0px;
+  background:rgba(44, 14, 55, 0.5);
+  transition: .2s;
+}
+  .info h2 {
+    padding-top: 30px;
+    font-size: 1.7vw;
+    font-weight: 300;
+}
+
+
+.inputFields {
+  margin: 0px 10px 0px 10px;
+  font-size: 2vw;
+  padding: 2px;
+  width: 120%;
+  border: 1px solid #45024b;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: rgba(32, 32, 32);
+  color: #ffd100;
+  outline: none;
+}
+.inputFields:hover {
+    background: rgba(255, 209, 0, 0.7);
+    transition: background .5s;
+}
+
+.noBullet {
+  list-style-type: none;
+  padding: 0;
+}
+
+#join-btn {
+  border: 1px solid #45024b;
+  width: 120%;
+  border-radius: 0 20px 20px 0;
+  background: rgba(110, 87, 143, 0.4);
+  font-size: 18px;
+  font-weight: 100;
+  color: rgba(243, 237, 249, 0.7);
+  margin: 20px 20px 0 10px;
+  padding: 10px 50px;
+  cursor: pointer;
+  transition: .4s;
+}
+#join-btn:hover{
+    background: rgba(44, 14, 55, 0.8);
+    font-weight: 900;
+    transition: background .5s;
+}
+ 
+
+@media (max-width: 1070px){
+
+    .signupSection {
+        width: 100%;
+        height: 45vh;
+    }
+    .inputFields {
+        font-size: 2vw;
+        width: 80%;
+        margin: 15px 10px 0px 10px;
+
+    }
+    #join-btn {
+   
+        padding: 2px;
+        width: 80%;
+    }
+    .signupForm {
+        width: 50%;
+    }
+    .info {
+        width: 50%;
+    }
+    .info h2{
+        font-size: 3.3vw;
+    }
+}

@@ -9,39 +9,51 @@ import Filters from './components/Filters/Filters';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import Register from './components/register/register';
-import basket from './components/Basket/basket';
+import Basket from './components/Basket/basket';
 const App = () => {
   const [products, setProducts] = useState([]);
+  const [basketData, setBasketData] = useState([{}]);
 
   const fetchProducts = async () => {
     const response = await commerce.products.list();
     setProducts((response && response.data) || []);
   };
 
+  const fetchBasketData = async () => {
+    const response = await commerce.cart.retrieve();
+    setBasketData(response);
+  };
+
+  const addProduct = async (productId, quantity) => {
+    const response = await commerce.cart.add(productId, quantity);
+    setBasketData(response.cart);
+  };
+
   useEffect(() => {
     fetchProducts();
+    fetchBasketData();
   }, []);
-
   console.log({ products });
+  console.log({ basketData });
   return (
     <Router >
       <Switch>
         <div>
           <header>
-            <Navbar />
+            <Navbar basketItems={basketData.total_items} />
           </header>
           <Route exact path="/">
             <main>
               <Intro />
               <div id="google"></div>
               <Filters />
-              <Products products={products} />
+              <Products products={products} addProduct={addProduct} />
               <Contact />
             </main>
           </Route>
           <Route exact path="/basket">
             <main>
-              <basket />
+              <Basket />
             </main>
           </Route>
           <Route exact path="/register">

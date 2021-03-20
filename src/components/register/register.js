@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Register() {
+function register() {
     return (
         <div>
-            <h2>rejestracja</h2>
+            <h2>asdasdsa</h2>
         </div>
     )
 }
 
-export default Register
+export default register
