@@ -37,7 +37,9 @@
     font-size: 50px;
     color: blueviolet;
   }
-  
+  .koszyk{
+      font-size: 0;
+  }
   .basket-wrapper strong {
     color: blueviolet;
   }
@@ -227,10 +229,21 @@
         text-align: center;
         margin-left: 0;
      margin-right: 0;
+     margin-bottom: -15px;
      background-color: white;
      width: 100%;
+
      
        }
+       .koszyk{
+        font-size: 3vw;
+        font-family: 'Lato', sans-serif;
+        font-weight: bold;
+    }
+    .basket-wrapper .custom-basket {
+        font-size: 0;
+        color: blueviolet;
+      }
     .logo{
         width: 40vw;
  

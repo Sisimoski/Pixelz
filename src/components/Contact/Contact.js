@@ -1,8 +1,12 @@
 import React from 'react'
 import "./style.css"
+import { Container } from "@material-ui/core";
 function Contact() {
     return (
         <div class="contactContainer">
+            <Container id="contact">
+
+            </Container>
             <div class="row col-xs-12 col-sm-12">
                 <h1>Skontaktuj się</h1>
             </div>

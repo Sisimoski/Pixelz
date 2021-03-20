@@ -10,3 +10,6 @@ body {
 header{
   margin-bottom:10vw
 }
+html {
+  scroll-behavior: smooth;
+}

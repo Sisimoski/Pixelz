@@ -11,6 +11,7 @@
     margin-left: 2%;
 }
 .footerContainer{
+    height: 150px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
