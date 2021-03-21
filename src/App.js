@@ -10,6 +10,7 @@ import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import Register from './components/register/register';
 import Basket from './components/Basket/basket';
+import ProductView from './components/ProductView/ProductView';
 const App = () => {
   const [products, setProducts] = useState([]);
   const [basketData, setBasketData] = useState([{}]);
@@ -87,6 +88,11 @@ const App = () => {
           <Route exact path="/register">
             <main>
               <Register />
+            </main>
+          </Route>
+          <Route exact path="/product-view/:id">
+            <main>
+              <ProductView addProduct={addProduct} />
             </main>
           </Route>
           <footer>
