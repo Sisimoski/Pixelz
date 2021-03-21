@@ -1,78 +1,130 @@
-import React from 'react'
-import "./style.css";
+import React, { Component } from "react";
+import './style.css';
+class register extends Component {
+    constructor() {
+        super();
 
-var alertRedInput = "#8C1010";
-var defaultInput = "rgba(10, 180, 180, 1)";
+        this.state = {
+            Email: '',
+            Password: '',
+            Nick: '',
+            Name: '',
+            Surname: '',
+            Street: '',
+            PostalCode: '',
+            Town:'',
+            Phone:''
+        }
 
-function userNameValidation(usernameInput) {
-    var username = document.getElementById("username");
-    var issueArr = [];
-    if (/[-!@#$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/.test(usernameInput)) {
-        issueArr.push("No special characters!");
-    }
-    if (issueArr.length > 0) {
-        username.setCustomValidity(issueArr);
-        username.style.borderColor = alertRedInput;
-    } else {
-        username.setCustomValidity("");
-        username.style.borderColor = defaultInput;
-    }
-}
+        this.Email = this.Email.bind(this);
+        this.Password = this.Password.bind(this);
+        this.Nick = this.Nick.bind(this);
+        this.Name = this.Name.bind(this);
+        this.Surname = this.Surname.bind(this);
+        this.Street = this.Street.bind(this);
+        this.PostalCode = this.PostalCode.bind(this);
+        this.Town = this.Town.bind(this);
+        this.Phone = this.Phone.bind(this);
 
-function passwordValidation(passwordInput) {
-    var password = document.getElementById("password");
-    var issueArr = [];
-    if (!/^.{7,15}$/.test(passwordInput)) {
-        issueArr.push("Password must be between 7-15 characters.");
     }
-    if (!/\d/.test(passwordInput)) {
-        issueArr.push("Must contain at least one number.");
+    Email(event) {
+        this.setState({ Email: event.target.value })
     }
-    if (!/[a-z]/.test(passwordInput)) {
-        issueArr.push("Must contain a lowercase letter.");
+    Password(event) {
+        this.setState({ Password: event.target.value })
     }
-    if (!/[A-Z]/.test(passwordInput)) {
-        issueArr.push("Must contain an uppercase letter.");
+    Nick(event) {
+        this.setState({ Nick: event.target.value })
     }
-    if (issueArr.length > 0) {
-        password.setCustomValidity(issueArr.join("\n"));
-        password.style.borderColor = alertRedInput;
-    } else {
-        password.setCustomValidity("");
-        password.style.borderColor = defaultInput;
+    Name(event) {
+        this.setState({ Name: event.target.value })
     }
-}
+    Surname(event) {
+        this.setState({ Surname: event.target.value })
+    }
+    Street(event) {
+        this.setState({ Street: event.target.value })
+    }
+    PostalCode(event) {
+        this.setState({ PostalCode: event.target.value })
+    }
+   Town(event) {
+        this.setState({ Town: event.target.value })
+    }
+    Phone(event) {
+        this.setState({ Phone: event.target.value })
+    }
+    
 
-function Register() 
-{
-    return(
-        <div class="signupSection">
-        <div class="info">
-          <h2>Kupuj najlepsze gry w super cenach!</h2>
-          <n/>
-          <p>Dołącz już teraz</p>
-        </div>
-        <form action="#" method="POST" class="signupForm" name="signupform">
-         
-          <ul class="noBullet">
-            <li>
-              <label for="username"></label>
-              <input type="text" class="inputFields" id="username" name="username" placeholder="Username" value="" oninput="return userNameValidation(this.value)" required/>
-            </li>
-            <li>
-              <label for="password"></label>
-              <input type="password" class="inputFields" id="password" name="password" placeholder="Password" value="" oninput="return passwordValidation(this.value)" required/>
-            </li>
-            <li>
-              <label for="email"></label>
-              <input type="email" class="inputFields" id="email" name="email" placeholder="Email" value="" required/>
-            </li>
-            <li id="center-btn">
-              <input type="submit" id="join-btn" name="join" alt="Join" value="Join"/>
-            </li>
-          </ul>
+    render() {
+
+    return (
+        <>
+   
+        
+        <div class="box">
+        <div class="kol1"></div>
+        <div class="kol2">
+            <h2> Przyspiesz proces łącząc swoje konto z naszym serwisem</h2><br></br>
+            <form action="#" method="POST" name="signOption">
+                <input type="button" value="Google"/>
+                <input type="button" value="Facebook"/><br></br><br></br><br></br>
+            </form>
+
+            <form action="#" method="POST"  name="signdata">
+            <n />
+            <h2>Dane konta</h2>
+        
+                <li>
+                    <label for="email"></label>
+                    <input class="inputFields" onChange={this.Email} type="e-mail" placeholder="Adres e-mail" pattern="[A-Za-z0-9-.,]{2,}@[A-Za-z0-9-]{2,}[.]{1}[a-zA-Z]{2,}" title="Podaj swój adres email" required />
+                </li>
+                <li>
+                    <label for="password"></label>
+                    <input class="inputFields" onChange={this.Password} type="password" id="password" placeholder="Hasło" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                        title="Hasło musi zawierać małą jak i duzą litere,znak specjalny oraz zawierać minimum 8 znaków" required />
+                </li>
+                <li>
+                    <label for="nick"></label>
+                    <input class="inputFields" onChange={this.Nick} type="text" id="nick" placeholder="Nick" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required />
+                </li>
+      
+        <br></br>
+        <h2>Dane kontaktowe</h2>
+
+                <li>
+                    <label for="name"></label>
+                    <input class="inputFields" onChange={this.Name} type="text" placeholder="Imie" pattern="[A-Za-z]{1,32}" title="Podaj swoje imie" required />
+                </li>
+                <li>
+                    <label for="surname"></label>
+                    <input class="inputFields" onChange={this.Surname} type="text" id="surname" placeholder="Nazwisko" pattern="[A-Za-z]{1,32}" required />
+                </li>
+                <li>
+                    <label for="street"></label>
+                    <input class="inputFields" onChange={this.Street} type="text" id="street" placeholder="Ulica i numer" required />
+                </li>
+                <li>
+                    <label for="postalCode"></label>
+                    <input class="inputFields" onChange={this.PostalCode} type="text" id="PostalCode" placeholder="Kod pocztowy" pattern="[0-9]{2}\-[0-9]{3}" required />
+                </li>
+                <li>
+                    <label for="Town"></label>
+                    <input class="inputFields" onChange={this.Town} type="text" id="Town" placeholder="Miejscowość" pattern="[A-Za-z] {1,32}" required />
+                </li>
+                <li>
+                    <label for="Phone"></label>
+                    <input class="inputFields" onChange={this.Phone} type="tel" id="Phone" placeholder="Numer telefonu" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required />
+                </li>
+                <li id="center-btn">
+                     <input class="join-btn" type="submit" id="join-btn" name="join" alt="Join" value="Join"/>
+                </li>
         </form>
-      </div>
-    )
-} 
-export default Register
+        </div>
+        <div class="kol3"></div>
+    </div></>
+        )
+    }
+}
+
+export default register;
