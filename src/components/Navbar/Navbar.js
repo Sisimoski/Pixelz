@@ -56,27 +56,18 @@ function SNavbar({ basketItems, totalCost }) {
                             </Nav>
                         </div>
                         <div className="basketContainer">
-                            {location.pathname === "/basket" ? (
-                                <div className="basket-wrapper">
-                                    <h2>
-                                        Total cost: <strong>{totalCost}</strong>
-                                    </h2>
-                                </div>
-                            ) : (
-                                <div className="basket-wrapper">
-                                    <IconButton
-                                        component={Link}
-                                        to="/basket"
-                                        aria-label="Show basket contents"
-                                        color="inherit"
-                                    >
-                                        <Badge badgeContent={basketItems} color="secondary">
-                                            <ShoppingCart className="custom-basket" /><p className="koszyk">Koszyk</p>
-                                        </Badge>
-                                    </IconButton>
-                                </div>
-                            )}
-
+                            <div className="basket-wrapper">
+                                <IconButton
+                                    component={Link}
+                                    to="/basket"
+                                    aria-label="Show basket contents"
+                                    color="inherit"
+                                >
+                                    <Badge badgeContent={basketItems} color="secondary">
+                                        <ShoppingCart className="custom-basket" /><p className="koszyk">Koszyk</p>
+                                    </Badge>
+                                </IconButton>
+                            </div>
                         </div>
                         <form className="form-inline">
                             <button onClick={openPage} className="btn1" type="button" id="myBtn">Zarejestruj się </button>
