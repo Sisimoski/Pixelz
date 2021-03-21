@@ -5,7 +5,7 @@ import "./style.css"
 function Intro() {
     return (
         <div className="banner">
-            <Container>
+            <Container id="baner">
                 <Grid container spacing={4}>
                     <Grid className="brand" item sm={12}>
                         <img src={baner} alt="Brand-tv" />

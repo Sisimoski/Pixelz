@@ -8,27 +8,31 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { ShoppingCart } from '@material-ui/icons';
 import "./style.css"
+import { Link } from 'react-router-dom';
 const Product = ({ product, addProduct = () => { } }) => (
 
 
     <Card className="product-card">
-        <CardActionArea>
-            <CardMedia
-                component="img"
-                height="300"
-                className="card-image"
-                image={product.media.source}
+        <Link to={`product-view/${product.id}`}>
+            <CardActionArea>
+                <CardMedia
+                    component="img"
+                    height="300"
+                    className="card-image"
+                    image={product.media.source}
 
-            />
-            <CardContent className="content">
-                <Typography className="title" gutterBottom variant="h6" component="h5">
-                    {product.name}
-                </Typography>
-                <Typography className="title" variant="body2" component="p">
-                    {product.description.slice(3, -4)}
-                </Typography>
-            </CardContent>
-        </CardActionArea>
+                />
+                <CardContent className="content">
+                    <Typography className="title" gutterBottom variant="h6" component="h5">
+                        {product.name}
+                    </Typography>
+                    <Typography className="title" variant="body2" component="p">
+                        {product.description.slice(3, -4)}
+                    </Typography>
+                </CardContent>
+            </CardActionArea>
+            <Typography variant="h4">Zobacz</Typography>
+        </Link>
         <CardActions className="actions-content">
             <>
                 <Typography className="price" gutterBottom variant="h5" component="h2">
@@ -39,7 +43,7 @@ const Product = ({ product, addProduct = () => { } }) => (
                 </Button>
             </>
         </CardActions>
-    </Card>
+    </Card >
 
 );
 export default Product;

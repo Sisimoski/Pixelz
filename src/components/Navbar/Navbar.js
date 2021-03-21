@@ -7,21 +7,19 @@ import { Link, useLocation } from "react-router-dom";
 import Modal from 'react-modal';
 import "./style.css"
 import Login from '../Login/login.js';
+import Register from '../register/register';
 
 const customStyles = {
     content: {
-        top: '50%',
+        top: '60%',
         left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
+        border: "none",
+        background: '#black',
         transform: 'translate(-50%, -50%)',
-        width: "500px",
-        height: "60vh",
-        border: "10px solid black",
-        opacity: "0.67",
-        zIndex: "10",
-        borderRadius: "20px",
+        width: '60%',
+        height: "67vh",
+        zIndex: "5",
+        overflow: "hidden",
     }
 };
 function SNavbar({ basketItems, totalCost }) {
@@ -36,7 +34,6 @@ function SNavbar({ basketItems, totalCost }) {
     }
 
     function afterOpenModal() {
-        // references are now sync'd and can be accessed.
         subtitle.style.color = 'black';
     }
 
@@ -52,33 +49,25 @@ function SNavbar({ basketItems, totalCost }) {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <div className="NavOptions">
                             <Nav className="mr-auto">
-                                <Nav.Link to="" className="Aboutus" >O nas</Nav.Link>
-                                <Nav.Link to="" className="Products" >Produkty</Nav.Link>
-                                <Nav.Link to="" className="Contact" >Kontakt</Nav.Link>
+                                <Nav.Link href="#baner" to="" className="Aboutus" >O nas</Nav.Link>
+                                <Nav.Link href="#products" className="Products" >Produkty</Nav.Link>
+                                <Nav.Link href="#contact" className="Contact" >Kontakt</Nav.Link>
                                 <div id="indicator"></div>
                             </Nav>
                         </div>
                         <div className="basketContainer">
-                            {location.pathname === "/basket" ? (
-                                <div className="basket-wrapper">
-                                    <h2>
-                                        Total cost: <strong>{totalCost}</strong>
-                                    </h2>
-                                </div>
-                            ) : (
-                                <div className="basket-wrapper">
-                                    <IconButton
-                                        component={Link}
-                                        to="/basket"
-                                        aria-label="Show basket contents"
-                                        color="inherit"
-                                    >
-                                        <Badge badgeContent={basketItems} color="secondary">
-                                            <ShoppingCart className="custom-basket" />
-                                        </Badge>
-                                    </IconButton>
-                                </div>
-                            )}
+                            <div className="basket-wrapper">
+                                <IconButton
+                                    component={Link}
+                                    to="/basket"
+                                    aria-label="Show basket contents"
+                                    color="inherit"
+                                >
+                                    <Badge badgeContent={basketItems} color="secondary">
+                                        <ShoppingCart className="custom-basket" /><p className="koszyk">Koszyk</p>
+                                    </Badge>
+                                </IconButton>
+                            </div>
                         </div>
                         <form className="form-inline">
                             <button onClick={openPage} className="btn1" type="button" id="myBtn">Zarejestruj się </button>
@@ -97,16 +86,14 @@ function SNavbar({ basketItems, totalCost }) {
                     style={customStyles}
                     contentLabel="Example Modal"
                 >
-
-                    <h2 ref={_subtitle => (subtitle = _subtitle)}>Witaj</h2>
-                    <br />
+                    <h2 ref={_subtitle => (subtitle = _subtitle)}></h2>
                     <Login />
 
                 </Modal>
             </div >
+
         </>
     );
-
 }
 
 export default SNavbar;

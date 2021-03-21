@@ -4,9 +4,12 @@ import ikonax from "../../media/xboxb.png";
 import ikonaps from "../../media/psb.png";
 import ikonapc from "../../media/pcb.png";
 import ikonans from "../../media/nsb.png";
+import { Container } from "@material-ui/core";
 function Filters() {
     return (
         <>
+            <Container id="products">
+            </Container>
             <div className="napis">
                 WYBIERZ PLATFORMĘ
                 <p className="tekst">Wybierz swoją ulubioną grę na swoją ulubioną platformę</p>

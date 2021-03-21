@@ -120,7 +120,7 @@ class register extends Component {
                      <input class="join-btn" type="submit" id="join-btn" name="join" alt="Join" value="Join"/>
                 </li>
         </form>
-        </div>
+ </div>
         <div class="kol3"></div>
     </div></>
         )
