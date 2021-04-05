@@ -11,9 +11,14 @@ import Footer from './components/Footer/Footer';
 import Register from './components/register/register';
 import Basket from './components/Basket/basket';
 import ProductView from './components/ProductView/ProductView';
+import Checkout from './components/Checkout/Checkout';
+import Confirmation from './components/Checkout/Confirmation';
+import Profile from './components/Profile/Profile';
 const App = () => {
   const [products, setProducts] = useState([]);
   const [basketData, setBasketData] = useState([{}]);
+  const [orderInfo, setOrderInfo] = useState({});
+  const [orderError, setOrderError] = useState("");
 
   const fetchProducts = async () => {
     const response = await commerce.products.list();
@@ -48,6 +53,24 @@ const App = () => {
   const refreshBasket = async () => {
     const newBasketData = await commerce.cart.refresh();
     setBasketData(newBasketData);
+  };
+
+  const handleCheckout = async (checkoutId, orderData) => {
+    try {
+      // const incomingOrder = await commerce.checkout.capture(
+      //   checkoutId,
+      //   orderData
+      // );
+
+      setOrderInfo(orderData);
+
+      refreshBasket();
+    } catch (error) {
+      setOrderError(
+        (error.data && error.data.error && error.data.error.message) ||
+        "There is an error occurred"
+      );
+    }
   };
 
   useEffect(() => {
@@ -93,6 +116,21 @@ const App = () => {
           <Route exact path="/product-view/:id">
             <main>
               <ProductView addProduct={addProduct} />
+            </main>
+          </Route>
+          <Route exact path="/checkout">
+            <main>
+              <Checkout orderInfo={orderInfo} orderError={orderError} basketData={basketData} handleCheckout={handleCheckout} />
+            </main>
+          </Route>
+          <Route exact path="/confirmation">
+            <main>
+              <Confirmation handleEmptyBasket={handleEmptyBasket} />
+            </main>
+          </Route>
+          <Route exact path="/profile">
+            <main>
+              <Profile />
             </main>
           </Route>
           <footer>
