@@ -39,6 +39,56 @@ const Basket = ({
             <div class="row mx-3 justify-content-between">
                 <div class="col-sm-8">
                     <h2>Koszyk</h2>
+                    <div className="d-flex justify-content-between">
+                        <h6>3 przedmioty dodane do koszyka.</h6>
+                        <Button variant="outline-danger" size="sm" onClick={handleEmptyBasket}>
+                            Usuń koszyk
+                        </Button>
+                    </div>
+                    <hr />
+                    <div className="row">
+                        <div className="col-6">
+                            <p className="text-muted text-uppercase">Szczegóły produktu</p>
+                        </div>
+                        <div className="col-2">
+                            <p className="text-muted text-uppercase text-center">Ilość</p>
+                        </div>
+                        <div className="col-2">
+                            <p className="text-muted text-uppercase text-center">Cena</p>
+                        </div>
+                        <div className="col-2">
+                            <p className="text-muted text-uppercase text-center">Łącznie</p>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col">
+                            <Image src="holder.js/171x180" rounded />
+                        </div>
+                        <div className="col-6">
+                            <h6>Forza Horizon 4</h6>
+                            <p>Xbox One</p>
+                            <Button variant="outline-danger" size="sm">
+                                Usuń
+                            </Button>
+                        </div>
+                        <div className="col-1">
+                            <Form.Group controlId="exampleForm.ControlSelect1">
+                                <Form.Control as="select">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </Form.Control>
+                            </Form.Group>
+                        </div>
+                        <div className="col">
+                            89.00 PLN
+                        </div>
+                        <div className="col">
+                            89.00 PLN
+                        </div>
+                    </div>
 
                 </div>
                 <div className="col-sm-3" style={summaryBg}>
