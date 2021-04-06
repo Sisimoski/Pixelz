@@ -38,6 +38,19 @@
     color: #000000;
     background-color: #03dac5;
   }
+
+  .summaryBg {
+    background-color: #EBEBEB;
+  }
+
+  .btn-pixPrimary {
+    background-color: #6E578F;
+    color: white;
+  }
+    .btn-pixSecondary {
+    background-color: #FFD103;
+  }
+
   @media (max-width: 1001px) {
    
   }
