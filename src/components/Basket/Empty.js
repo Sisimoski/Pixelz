@@ -1,6 +1,5 @@
 import React from 'react'
 import { Container, Typography, Button, Grid } from "@material-ui/core";
-import { ShoppingCart } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import "./style.css";
 import sadge from "../../media/sadge.png";

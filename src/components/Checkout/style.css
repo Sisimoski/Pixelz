@@ -1,0 +1,56 @@
+.checkout {
+    padding-top: 150px;
+    padding-bottom: 15px;
+    height: 850px;
+    font-family: 'Lato', sans-serif;
+    background-image: linear-gradient(to right, #5421b5, #5e22b8, #6823ba, #7124bd, #7a25bf, #7f2dc1, #8534c4, #8a3bc6, #8e47c9, #9152cc, #955dcf, #9967d1);
+}
+  
+  .checkout .paper {
+ 
+    max-width: 800px;
+    padding: 20px 15px;
+    margin: 0px auto 0px auto;
+    background-color: #dad6d9;
+    color: black;
+  }
+  
+  .checkout .paper h6 {
+    margin: 20px 0;
+  }
+  
+  .checkout .paper .actions.payment-actions {
+    margin-top: 25px;
+  }
+  .checkout .paper .actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .checkout .paper .actions a {
+    margin-right: 15px;
+    margin-left: 0;
+  }
+  
+  .checkout .paper .stepper {
+    background-color: #dad6d9;
+  }
+  
+  .products-spinner {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+  }
+  
+  .confirmation h5 {
+    margin: 20px 0;
+  }
+  
+  .confirmation a {
+    color: #000000;
+    background-color: #03dac5;
+  }
+  .space{
+    margin-top: 100px;
+  }
