@@ -11,6 +11,7 @@ import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 import { Form } from 'react-bootstrap';
 import './style.css';
+import Item from './item.js'
 
 const Basket = ({
     basketData,
@@ -29,18 +30,14 @@ const Basket = ({
         return <Empty />;
     };
 
-    const summaryBg = {
-        backgroundColor: '#EBEBEB'
-    };
-
     if (!basketData.line_items || !basketData.line_items.length) return loading();
     return (
         <div class="container-fluid">
             <div class="row mx-3 justify-content-between">
-                <div class="col-sm-8">
+                <div class="col">
                     <h2>Koszyk</h2>
-                    <div className="d-flex justify-content-between">
-                        <h6>3 przedmioty dodane do koszyka.</h6>
+                    <div className="d-flex justify-content-between align-items-end">
+                        <p className="font-weight-light cartDescription">3 przedmioty dodane do koszyka.</p>
                         <Button variant="outline-danger" size="sm" onClick={handleEmptyBasket}>
                             Usuń koszyk
                         </Button>
@@ -60,46 +57,19 @@ const Basket = ({
                             <p className="text-muted text-uppercase text-center">Łącznie</p>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col">
-                            <Image src="holder.js/171x180" rounded />
-                        </div>
-                        <div className="col-6">
-                            <h6>Forza Horizon 4</h6>
-                            <p>Xbox One</p>
-                            <Button variant="outline-danger" size="sm">
-                                Usuń
-                            </Button>
-                        </div>
-                        <div className="col-1">
-                            <Form.Group controlId="exampleForm.ControlSelect1">
-                                <Form.Control as="select">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </Form.Control>
-                            </Form.Group>
-                        </div>
-                        <div className="col">
-                            89.00 PLN
-                        </div>
-                        <div className="col">
-                            89.00 PLN
-                        </div>
-                    </div>
+                    <Item/>
+                    <Item/>
 
                 </div>
-                <div className="col-sm-3" style={summaryBg}>
+                <div className="col-auto summaryBg">
                     <div className="m-4">
                         <h2>Podsumowanie</h2>
                         <hr />
                         <div className="d-flex justify-content-between">
-                            <p className="text-uppercase">3 przedmioty</p>
-                            <p>277.00 PLN</p>
+                            <p className="text-uppercase m-0">3 przedmioty</p>
+                            <p className="font-weight-bold text-uppercase m-0">277.00 PLN</p>
                         </div>
-                        <Form>
+                        <Form className="my-5">
                             <Form.Group className="text-uppercase" controlId="">
                                 <Form.Label>Wysyłka</Form.Label>
                                 <Form.Control as="select" custom>
@@ -114,13 +84,13 @@ const Basket = ({
                                 Zastosuj
                         </Button>
                         </Form>
-                        <hr />
+                        <hr className="mt-5" />
                         <div className="d-flex justify-content-between">
                             <p className="text-uppercase">Łącznie</p>
-                            <p>286.00 PLN</p>
+                            <p className="font-weight-bold">286.00 PLN</p>
                         </div>
                         <div className="text-center">
-                            <Button variant="pixSecondary" type="submit">
+                            <Button variant="pixSecondary" type="submit" href="/checkout">
                                 Przejdź do płatności
                     </Button>
                         </div>
