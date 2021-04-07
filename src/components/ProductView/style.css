@@ -1,38 +1,41 @@
-.MuiContainer-root.product.view{
-    height: 80vh;
+.productview{
+    height: 770px;
     display: flex;
     align-items: center;
-    margin: 150px 0 100px 0;
 }
-.product-view .image-wrapper img{
-    width: 50%;
-    margin-bottom: 200px;
+.productview .image-wrapper img{
+    width: 400px;
+    height: 600px;
+    margin-bottom: 100px;
 }
-.product-view .text{
+.productview .text{
     color: black;
+    width: 200%;
+    text-align: justify;
+  text-justify: inter-word;
 }
-.product-view .text h2{
-    font-size: 30px;
+.productview .text h2{
+    font-size: 50px;
 }
-.product-view .text span h1{
+.productview .text span h1{
    font-size: 20px;
    font-weight: 300;
 }
-.product-view .text h3{
+.productview .text h3{
     margin-bottom: 20px;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 300;
 } 
-.product-view .text .quantity{
+.productview .text .quantity{
    margin-bottom: 5px;
 }
-.MuiContainer-root.product.view .custom-button{
+.MuiContainer.root.product.view .custom.button{
     color: black;
     background-color: blueviolet;
 }
-.MuiContainer-root.product.view .custom-button:hover{
+.MuiContainer.root.product.view .custom.button:hover{
   
 }
-.MuiContainer-root.product.view .custom-button svg{
+.MuiContainer.root.product.view .custom.button svg{
     margin-right: 10px;
 }
