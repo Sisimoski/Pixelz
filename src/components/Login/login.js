@@ -32,11 +32,11 @@ class login extends Component {
                     <n />
                     <p>Zaloguj się i do dzieła!</p>
                 </div>
-               
+
                 <form action="#" method="POST" name="signupform" class="signupForm">
 
                     <ul class="noBullet">
-                    <h2> Logowanie za pomocą konta</h2>
+                        <h2> Logowanie za pomocą konta</h2>
                         <li>
                             <label for="email"></label>
                             <input class="Fields" onChange={this.Email} type="e-mail" placeholder="Adres e-mail" pattern="[A-Za-z0-9-.,]{2,}@[A-Za-z0-9-]{2,}[.]{1}[a-zA-Z]{2,}" title="Podaj swój adres email" required />
@@ -52,14 +52,14 @@ class login extends Component {
                         <li id="center-btn">
                             <input type="submit" id="join-bt" name="join" alt="Join" value="Zaloguj" />
                         </li>
-                    
-                    <h3> Albo....</h3>
-                    <h2> Użyj konta Google</h2>
-                        <input type="button" value="Google"/><br></br>
-                        </ul>
+
+                        <h3> Albo....</h3>
+                        <br />
+                        <a class="googleBtn" href="#"><img src="https://img.icons8.com/color/16/000000/google-logo.png" /> <b>Zaloguj się z Google</b></a><br /><br />
+                    </ul>
                 </form>
-                
-               
+
+
             </div>
         )
     }
