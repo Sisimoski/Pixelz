@@ -28,31 +28,38 @@ class login extends Component {
         return (
             <div class="signupSection">
                 <div class="info">
-                    <h2>Kupuj najlepsze gry w super cenach!</h2>
+                    <h2>Masz już konto?</h2>
                     <n />
-                    <p>Dołącz już teraz</p>
+                    <p>Zaloguj się i do dzieła!</p>
                 </div>
-                <form action="#" method="POST" class="signupForm" name="signupform">
+               
+                <form action="#" method="POST" name="signupform" class="signupForm">
 
                     <ul class="noBullet">
-                        <li>
-                            <label for="username"></label>
-                            <input class="inputFields" onChange={this.UserName} type="text" placeholder="Login" pattern="[A-Za-z0-9-]{3,99}" title="Login musi miec przynajmniej 3 znaki" required />
-                        </li>
+                    <h2> Logowanie za pomocą konta</h2>
                         <li>
                             <label for="email"></label>
-                            <input class="inputFields" onChange={this.Email} type="e-mail" placeholder="Adres e-mail" pattern="[A-Za-z0-9-.,]{2,}@[A-Za-z0-9-]{2,}[.]{1}[a-zA-Z]{2,}" title="Podaj swój adres email" required />
+                            <input class="Fields" onChange={this.Email} type="e-mail" placeholder="Adres e-mail" pattern="[A-Za-z0-9-.,]{2,}@[A-Za-z0-9-]{2,}[.]{1}[a-zA-Z]{2,}" title="Podaj swój adres email" required />
                         </li>
                         <li>
                             <label for="password"></label>
-                            <input class="inputFields" onChange={this.Password} type="password" id="password" placeholder="Hasło" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                            <input class="Fields" onChange={this.Password} type="password" id="password" placeholder="Hasło" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
                                 title="Hasło musi zawierać małą jak i duzą litere,znak specjalny oraz zawierać minimum 8 znaków" required />
                         </li>
-                        <li id="center-btn">
-                            <input type="submit" id="join-btn" name="join" alt="Join" value="Join" />
+                        <li>
+                            <a href=""> Zapomniałeś hasła?</a>
                         </li>
-                    </ul>
+                        <li id="center-btn">
+                            <input type="submit" id="join-bt" name="join" alt="Join" value="Zaloguj" />
+                        </li>
+                    
+                    <h3> Albo....</h3>
+                    <h2> Użyj konta Google</h2>
+                        <input type="button" value="Google"/><br></br>
+                        </ul>
                 </form>
+                
+               
             </div>
         )
     }

@@ -1,13 +1,13 @@
 
 .signupSection {
-  background: url("../../media/pad.jpg");
-  background-repeat: round;
+  background: url("../../media/hero.jpg");
+  background-repeat: space;
   position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  height: 64vh;
+  height: 60vh;
   text-align: center;
   display: flex;
   color: white;
@@ -25,8 +25,8 @@
   {
     padding-top: 30px;
     font-size: 2.8vw;
-    font-weight: 600;
-    color: rgb(32, 32, 32);
+    font-weight: 800;
+    color: rgb(76, 5, 85);
   }
 
   .icon 
@@ -39,7 +39,8 @@
 .signupForm {
   width: 60%;
   display: flex;
-  padding: 120px 0px;
+  flex-flow: column;
+  padding: 50px 0px;
   background:rgba(44, 14, 55, 0.5);
   transition: .2s;
 }
@@ -48,22 +49,31 @@
     font-size: 1.7vw;
     font-weight: 300;
 }
+.signupForm a{
+  color: white;
+  font-size: 0.9vw ;
+}
+.signupForm a:link{
+  color: white;
+}
+.signupForm a:visited{
+  color: white;
+}
 
-
-.inputFields {
+.Fields {
   margin: 0px 10px 0px 10px;
-  font-size: 2vw;
+  font-size: 1.3vw;
   padding: 2px;
-  width: 120%;
+  width: 80%;
   border: 1px solid #45024b;
   border-top: none;
   border-left: none;
   border-right: none;
-  background: rgba(32, 32, 32);
-  color: blueviolet;
+  background: rgb(238, 235, 235);
+  color: rgb(80, 71, 88);
   outline: none;
 }
-.inputFields:hover {
+.Fields:hover {
     background: rgba(255, 255, 255, 0.7);
     transition: background .5s;
 }
@@ -72,51 +82,126 @@
   list-style-type: none;
   padding: 0;
 }
-
-#join-btn {
+.signupForm input{
+  width: 80%;
+  text-align: center;
+  margin: 10px 10px 0px 10px;
+  padding: 2px;
   border: 1px solid #45024b;
-  width: 120%;
-  border-radius: 0 20px 20px 0;
-  background: rgba(110, 87, 143, 0.4);
-  font-size: 18px;
+  border-radius: 20px;
+}
+
+#join-bt {
+  border: 1px solid #45024b;
+  border-radius: 20px;
+  width: 80%;
+  background: rgba(110, 87, 143, 0.8);
+  font-size: 1.2vw;
   font-weight: 100;
   color: rgba(243, 237, 249, 0.7);
-  margin: 20px 20px 0 10px;
-  padding: 10px 50px;
+  margin: 10px 10px 0px 10px;
+  text-align: center;
   cursor: pointer;
   transition: .4s;
 }
-#join-btn:hover{
+#join-bt:hover{
     background: rgba(44, 14, 55, 0.8);
-    font-weight: 900;
+    font-weight: 700;
     transition: background .5s;
 }
- 
+.signupForm h3{
+  font-size: 1vw;
+  margin-top: 45px;
+}
 
-@media (max-width: 1070px){
+@media (max-width: 1040px){
 
     .signupSection {
         width: 100%;
         height: 45vh;
     }
-    .inputFields {
-        font-size: 2vw;
-        width: 80%;
-        margin: 15px 10px 0px 10px;
+    .Fields {
+        font-size: 1.6vw;
+        width: 95%;
+        margin: 5px 10px 0px 10px;
 
     }
-    #join-btn {
+    #join-bt {
    
         padding: 2px;
         width: 80%;
+        margin: 15px 10px 0px 10px;
     }
     .signupForm {
         width: 50%;
+        padding: 60px 0;
+    }
+    .signupForm a{
+      font-size: 1.6vw;
     }
     .info {
+        padding: 30px 0;
         width: 50%;
     }
     .info h2{
-        font-size: 3.3vw;
+        font-size: 2.8vw;
     }
+    .signupForm h3{
+      font-size: 1.5vw;
+      margin-top: 10px;
+    }
+    .signupForm h2{
+      font-size: 1.5vw;
+    }
+}
+@media (max-width: 770px){
+  .signupSection {
+      width: 100%;
+      height: 40vh;
+  }
+  #join-bt { 
+    font-size: 1.5vw;
+    margin: auto;
+    width: 90%;
+}
+.signupForm input{
+  width: 90%;
+  font-size: 1.6vw;
+  text-align: center;
+  margin: 5px 5px 0px 5px;
+  padding: 2px;
+}
+
+.Fields {
+  font-size: 1.4vw;
+  width: 100%;
+  margin: 0px 5px 0px 5px;
+}
+}
+@media (max-width: 400px){
+  .signupSection {
+    width: 120%;
+    height: 40vh;
+}
+.signupForm input{
+  width: 90%;
+  font-size: 1.6vw;
+  text-align: center;
+  margin:auto;
+}
+.Fields {
+  font-size: 1.4vw;
+  width: 90%;
+  margin: auto;
+}
+.signupForm h3{
+  font-size: 2.5vw;
+  margin-top: 5px;
+}
+.signupForm h2{
+  font-size: 2.5vw;
+}
+.signupForm a{
+  font-size: 2.2vw;
+}
 }
