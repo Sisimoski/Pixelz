@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Products from './components/Products/';
 import Navbar from './components/Navbar/Navbar';
 import Intro from './components/Carousel/Intro';
-import Filters from './components/Filters/Filters';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import Register from './components/register/register';
@@ -15,14 +14,28 @@ import Checkout from './components/Checkout/Checkout';
 import Confirmation from './components/Checkout/Confirmation';
 import Profile from './components/Profile/Profile';
 const App = () => {
-  const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [basketData, setBasketData] = useState([{}]);
   const [orderInfo, setOrderInfo] = useState({});
   const [orderError, setOrderError] = useState("");
 
   const fetchProducts = async () => {
-    const response = await commerce.products.list();
-    setProducts((response && response.data) || []);
+    const { data: products } = await commerce.products.list();
+    const { data: categories } = await commerce.categories.list();
+
+    const productsPerCategory = categories.reduce((acc, category) => {
+      return [
+        ...acc,
+        {
+          ...category,
+          productsData: products.filter((product) =>
+            product.categories.find((cat) => cat.id === category.id)
+          ),
+        },
+      ];
+    }, []);
+
+    setCategories((productsPerCategory) || []);
   };
 
   const fetchBasketData = async () => {
@@ -77,7 +90,7 @@ const App = () => {
     fetchProducts();
     fetchBasketData();
   }, []);
-  console.log({ products });
+
   console.log({ basketData });
   return (
     <Router >
@@ -94,8 +107,7 @@ const App = () => {
             <main>
               <Intro />
               <div id="google"></div>
-              <Filters />
-              <Products products={products} addProduct={addProduct} />
+              <Products categories={categories} addProduct={addProduct} />
               <Contact />
             </main>
           </Route>

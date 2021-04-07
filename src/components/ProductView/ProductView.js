@@ -38,7 +38,7 @@ const ProductView = ({ addProduct }) => {
     return (
         <Container className="product-view">
             <Grid container spacing={4}>
-                <Grid item xs={12} md={8} className="image-wrapper">
+                <Grid item xs={12} md={7} className="image-wrapper">
                     <img
                         onLoad={() => {
                             setLoading(false);
@@ -47,7 +47,7 @@ const ProductView = ({ addProduct }) => {
                         alt={product.name}
                     />
                 </Grid>
-                <Grid item xs={12} md={4} className="text">
+                <Grid item xs={12} md={5} className="text">
                     <Typography variant="h2">{product.name}</Typography>
                     <Typography variant="p" dangerouslySetInnerHTML={createMarkup(product.description)}
                     />
