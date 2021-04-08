@@ -89,8 +89,8 @@ const App = () => {
   useEffect(() => {
     fetchProducts();
     fetchBasketData();
-  }, []);
 
+  }, []);
   console.log({ basketData });
   return (
     <Router >
@@ -127,7 +127,7 @@ const App = () => {
           </Route>
           <Route exact path="/product-view/:id">
             <main>
-              <ProductView addProduct={addProduct} categories={categories} />
+              <ProductView categories={categories} addProduct={addProduct} />
             </main>
           </Route>
           <Route exact path="/checkout">

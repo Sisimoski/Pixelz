@@ -12,9 +12,8 @@ const createMarkup = (text) => {
 
 const ProductView = ({ addProduct, categories }) => {
     const [product, setProduct] = useState({});
-    const [quantity, setQuantity] = useState(1);
-    const [loading, setLoading] = useState(true);
 
+    const [quantity, setQuantity] = useState(1);
     const fetchProduct = async (id) => {
         const response = await commerce.products.retrieve(id);
         const { name, price, media, quantity, description } = response;
@@ -36,28 +35,44 @@ const ProductView = ({ addProduct, categories }) => {
             setQuantity(quantity + 1);
         }
     }
-    // console.log("id produktu: ", product.id)
-    // console.log(categories[0])
+    //console.log("id produktu: ", product)
+    //console.log("category", categories)
     //console.log("id produktu kat:", categories[0].productsData[1].id)
-    var categoryName;
-    var k = 0, m = 0;
-    for (var i = 0; i < 4; i++) {
-        if (product.id != categories[i].productsData[k].id) {
-            if (k <= categories[i].productsData[k].length)
-                k++;
-        } else {
-            m = i;
+    const [showSpinner, setShowSpinner] = useState(true);
+    const loading = () => {
+        setTimeout(() => {
+            setShowSpinner(false);
+        }, 2000);
+        if (showSpinner) {
+            return <Spinner />;
         }
+    };
+    function category() {
+        if (categories.length == 0)
+            categoryName = "Kategoria";
+        else {
+            var categoryName;
+            var k = 0, m = 0;
+            for (var i = 0; i < 4; i++) {
+                if (product.id != categories[i].productsData[k].id) {
+                    if (k <= categories[i].productsData[k].length)
+                        k++;
+                } else {
+                    m = i;
+                }
 
+            }
+            categoryName = categories[m].slug;
+        }
+        return categoryName.toUpperCase();
     }
-    categoryName = categories[m].slug;
-
+    if (categories.length == 0) return loading();
     return (
         <div className="container-fluid">
             <div className="row mx-5">
                 <div className="col">
                     <h2>{product.name}</h2>
-                    <h4 className="font-weight-light text-muted">{categoryName.toUpperCase()}</h4>
+                    <h4 className="font-weight-light text-muted">{category()}</h4>
 
                     <div className="d-flex justify-content-between align-items-center mt-5">
                         <p className="productPrice font-weight-light">{product.price}</p>
