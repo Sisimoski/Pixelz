@@ -2,7 +2,7 @@ import { Container, Grid, Button1, Typography } from '@material-ui/core';
 import { ShoppingCart } from '@material-ui/icons';
 import { commerce } from "../../lib/commerce";
 import { React, useState, useEffect } from 'react';
-import { Button, Card, CardGroup, Image } from 'react-bootstrap'; 
+import { Button, Card, CardGroup, Image } from 'react-bootstrap';
 import './style.css';
 import Spinner from '../Spinner/Spinner';
 
@@ -10,7 +10,7 @@ const createMarkup = (text) => {
     return { __html: text };
 };
 
-const ProductView = ({ addProduct }) => {
+const ProductView = ({ addProduct, categories }) => {
     const [product, setProduct] = useState({});
     const [quantity, setQuantity] = useState(1);
     const [loading, setLoading] = useState(true);
@@ -36,12 +36,28 @@ const ProductView = ({ addProduct }) => {
             setQuantity(quantity + 1);
         }
     }
+    // console.log("id produktu: ", product.id)
+    // console.log(categories[0])
+    //console.log("id produktu kat:", categories[0].productsData[1].id)
+    var categoryName;
+    var k = 0, m = 0;
+    for (var i = 0; i < 4; i++) {
+        if (product.id != categories[i].productsData[k].id) {
+            if (k <= categories[i].productsData[k].length)
+                k++;
+        } else {
+            m = i;
+        }
+
+    }
+    categoryName = categories[m].slug;
+
     return (
         <div className="container-fluid">
             <div className="row mx-5">
                 <div className="col">
                     <h2>{product.name}</h2>
-                    <h4 className="font-weight-light text-muted">Xbox One</h4>
+                    <h4 className="font-weight-light text-muted">{categoryName.toUpperCase()}</h4>
 
                     <div className="d-flex justify-content-between align-items-center mt-5">
                         <p className="productPrice font-weight-light">{product.price}</p>
@@ -50,11 +66,11 @@ const ProductView = ({ addProduct }) => {
                             <p className="mx-3 my-0">Ilość: {quantity}</p>
                             <Button variant="outline-dark" onClick={() => { handleQuantity("increase"); }}><i class="bi bi-plus"></i></Button>
                         </div>
-                        <Button variant="pixSecondary" onClick={() => { addProduct(product.id, quantity);}}>
+                        <Button variant="pixSecondary" onClick={() => { addProduct(product.id, quantity); }}>
                             Dodaj do koszyka
                         </Button>
                     </div>
-                    <hr/>
+                    <hr />
                 </div>
                 <div className="col-4">
                     <p className="text-justify productDescription">{product.description}</p>
@@ -66,7 +82,7 @@ const ProductView = ({ addProduct }) => {
                     <Image src={product.src} className="productScreens" fluid />
                 </div>
                 <div className="col-3">
-                    <Image src={product.src} className="productScreens" fluid />
+
                     <a href="#" className="linkOnImage text-uppercase">Zobacz więcej <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
@@ -91,9 +107,9 @@ const ProductView = ({ addProduct }) => {
         //             <Grid container spacing={4}>
         //                 <Grid item xs={12}>
         //                     <Button size="small" variant="contained" className="increase-product-quantity"
-                                // onClick={() => {
-                                //     handleQuantity("increase");
-                                // }}
+        // onClick={() => {
+        //     handleQuantity("increase");
+        // }}
         //                     >+</Button>
         //                 </Grid>
         //                 <Grid item xs={12}>
@@ -103,16 +119,16 @@ const ProductView = ({ addProduct }) => {
         //                 </Grid>
         //                 <Grid item xs={12}>
         //                     <Button size="small" color="secondary" variant="contained" className="increase-product-quantity"
-                                // onClick={() => {
-                                //     handleQuantity("decries");
-                                // }}
+        // onClick={() => {
+        //     handleQuantity("decries");
+        // }}
         //                     >-</Button>
         //                 </Grid>
         //                 <Grid item xs={12}>
         //                     <Button size="large" className="custom-button"
-                                // onClick={() => {
-                                //     addProduct(product.id, quantity);
-                                // }}
+        // onClick={() => {
+        //     addProduct(product.id, quantity);
+        // }}
         //                     >
         //                         <ShoppingCart />Dodaj do koszyka
         //                     </Button>
@@ -123,6 +139,7 @@ const ProductView = ({ addProduct }) => {
         //     {loading && <Spinner />}
         // </Container>
     )
+
 }
 
 export default ProductView

@@ -127,7 +127,7 @@ const App = () => {
           </Route>
           <Route exact path="/product-view/:id">
             <main>
-              <ProductView addProduct={addProduct} />
+              <ProductView addProduct={addProduct} categories={categories} />
             </main>
           </Route>
           <Route exact path="/checkout">
