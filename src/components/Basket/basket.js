@@ -57,8 +57,18 @@ const Basket = ({
                             <p className="text-muted text-uppercase text-center">Łącznie</p>
                         </div>
                     </div>
-                    <Item/>
-                    <Item/>
+                    {basketData.line_items.map((item) => {
+                        return (
+                            <Grid key={item.id} item>
+                                <Item
+                                    basket
+                                    product={item}
+                                    updateProduct={updateProduct}
+                                    RemoveItemFromBasket={RemoveItemFromBasket}
+                                />
+                            </Grid>
+                        );
+                    })}
 
                 </div>
                 <div className="col-auto summaryBg">
