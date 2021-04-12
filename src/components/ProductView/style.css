@@ -5,14 +5,14 @@
     display: flex;
     align-items: center;
 }
-.productview .image-wrapper img{
-    width: 400px;
-    height: 600px;
-    margin-bottom: 100px;
+.productview  img{
+   margin-left: 300px;
+    width: 330px;
+    height: 450px;
 }
 .productview .text{
     color: black;
-    width: 200%;
+    width: 100%;
     text-align: justify;
   text-justify: inter-word;
 }

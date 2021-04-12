@@ -4,6 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Products from './components/Products/';
 import Navbar from './components/Navbar/Navbar';
+import Navbar2 from './components/Navbar/Navbar2';
 import Intro from './components/Carousel/Intro';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
@@ -97,13 +98,20 @@ const App = () => {
       <Switch>
         <div>
           <header>
-            <Navbar basketItems={basketData.total_items} totalCost={
+            <Navbar2 basketItems={basketData.total_items} totalCost={
               (basketData.subtotal &&
                 basketData.subtotal.formatted_with_symbol) ||
               "00.00"
             } />
           </header>
           <Route exact path="/">
+            <header>
+              <Navbar basketItems={basketData.total_items} totalCost={
+                (basketData.subtotal &&
+                  basketData.subtotal.formatted_with_symbol) ||
+                "00.00"
+              } />
+            </header>
             <main>
               <Intro />
               <div id="google"></div>

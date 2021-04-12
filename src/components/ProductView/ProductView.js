@@ -68,41 +68,34 @@ const ProductView = ({ addProduct, categories }) => {
     }
     if (categories.length == 0) return loading();
     return (
-        <div className="container-fluid">
-            <div className="row mx-5">
-                <div className="col">
-                    <h2>{product.name}</h2>
-                    <h4 className="font-weight-light text-muted">{category()}</h4>
-
-                    <div className="d-flex justify-content-between align-items-center mt-5">
-                        <p className="productPrice font-weight-light">{product.price}</p>
-                        <div className="ml-auto mr-3 d-flex align-items-center">
-                            <Button variant="outline-dark" onClick={() => { handleQuantity("decries"); }}><i class="bi bi-dash"></i></Button>
-                            <p className="mx-3 my-0">Ilość: {quantity}</p>
-                            <Button variant="outline-dark" onClick={() => { handleQuantity("increase"); }}><i class="bi bi-plus"></i></Button>
-                        </div>
-                        <Button variant="pixSecondary" onClick={() => { addProduct(product.id, quantity); }}>
-                            Dodaj do koszyka
+        <div className="productview">
+            <div className="container-fluid">
+                <div className="row mx-5">
+                    <div className="col">
+                        <h2>{product.name}</h2>
+                        <h4 className="font-weight-light text-muted">{category()}</h4>
+                        <Image src={product.src} className="productScreens" fluid />
+                        <div className="d-flex justify-content-between align-items-center mt-5">
+                            <p className="productPrice font-weight-light">{product.price}</p>
+                            <div className="ml-auto mr-3 d-flex align-items-center">
+                                <Button variant="outline-dark" onClick={() => { handleQuantity("decries"); }}><i class="bi bi-dash"></i></Button>
+                                <p className="mx-3 my-0">Ilość: {quantity}</p>
+                                <Button variant="outline-dark" onClick={() => { handleQuantity("increase"); }}><i class="bi bi-plus"></i></Button>
+                            </div>
+                            <Button variant="pixSecondary" onClick={() => { addProduct(product.id, quantity); }}>
+                                Dodaj do koszyka
                         </Button>
+                        </div>
+                        <hr />
                     </div>
-                    <hr />
+                    <div className="col-4">
+                        <Typography className="text" variant="subtitle1" dangerouslySetInnerHTML={createMarkup(product.description)} />
+                    </div>
                 </div>
-                <div className="col-4">
-                    <p className="text-justify productDescription">{product.description}</p>
-                    <p className="font-italic text-justify productSummary">Some placeholder text to demonstrate justified text alignment. Will you do the same for me? It's time to face the music I'm no longer your muse. Heard it's beautiful, be the judge and my girls gonna take a vote. I can feel a phoenix inside of me. Heaven is jealous of our love, angels are crying from up above. Yeah, you take me to utopia.</p>
-                </div>
-            </div>
-            <div className="row mx-5 my-4">
-                <div className="col-9">
-                    <Image src={product.src} className="productScreens" fluid />
-                </div>
-                <div className="col-3">
-
-                    <a href="#" className="linkOnImage text-uppercase">Zobacz więcej <i class="bi bi-arrow-right"></i></a>
+                <div className="row mx-5 my-4">
                 </div>
             </div>
-        </div>
-
+        </div >
         // <Container className="productview">
         //     <Grid container spacing={4}>
         //         <Grid item xs={12} md={6} className="image-wrapper">
