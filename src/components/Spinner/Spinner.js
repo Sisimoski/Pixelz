@@ -1,9 +1,10 @@
 import { CircularProgress } from "@material-ui/core";
 import "./style.css";
+import animacja from '../../media/animacja2.gif';
 
 const Spinner = () => (
     <div className="spinner">
-        <CircularProgress />
+        <img SRC={animacja} />
     </div>
 );
 

@@ -23,7 +23,7 @@ const Basket = ({
     const loading = () => {
         setTimeout(() => {
             setShowSpinner(false);
-        }, 2000);
+        }, 5000);
         if (showSpinner) {
             return <Spinner />;
         }
@@ -37,7 +37,7 @@ const Basket = ({
                 <div class="col">
                     <h2>Koszyk</h2>
                     <div className="d-flex justify-content-between align-items-end">
-                        <p className="font-weight-light cartDescription">3 przedmioty dodane do koszyka.</p>
+                        <p className="font-weight-light cartDescription">{basketData.total_items} przedmioty dodane do koszyka.</p>
                         <Button variant="outline-danger" size="sm" onClick={handleEmptyBasket}>
                             Usuń koszyk
                         </Button>
@@ -76,8 +76,8 @@ const Basket = ({
                         <h2>Podsumowanie</h2>
                         <hr />
                         <div className="d-flex justify-content-between">
-                            <p className="text-uppercase m-0">3 przedmioty</p>
-                            <p className="font-weight-bold text-uppercase m-0">277.00 PLN</p>
+                            <p className="text-uppercase m-0">{basketData.total_items} przedmioty</p>
+                            <p className="font-weight-bold text-uppercase m-0">{basketData.subtotal.formatted_with_code}</p>
                         </div>
                         <Form className="my-5">
                             <Form.Group className="text-uppercase" controlId="">
@@ -97,7 +97,7 @@ const Basket = ({
                         <hr className="mt-5" />
                         <div className="d-flex justify-content-between">
                             <p className="text-uppercase">Łącznie</p>
-                            <p className="font-weight-bold">286.00 PLN</p>
+                            <p className="font-weight-bold">{basketData.subtotal.formatted_with_code}</p>
                         </div>
                         <div className="text-center">
                             <Button variant="pixSecondary" type="submit" href="/checkout">

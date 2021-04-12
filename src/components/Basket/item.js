@@ -1,3 +1,4 @@
+import { Typography } from '@material-ui/core';
 import { React, useState } from 'react'
 import { Container, Row, Col, Button, Image, Form } from 'react-bootstrap';
 import './style.css';
@@ -19,28 +20,56 @@ const Item = ({
                     <div className="col d-flex align-items-start flex-column">
                         <p className="cartItemTitle">{product.name}</p>
                         <p className="cartItemPlatform font-weight-light">Platform Title</p>
-                        <Button variant="outline-danger" size="sm" className="text-uppercase mt-auto" onClick={() => {RemoveItemFromBasket(product.id);}}>
+                        <Button variant="outline-danger" size="sm" className="text-uppercase mt-auto" onClick={() => { RemoveItemFromBasket(product.id); }}>
                             Usuń
                         </Button>
                     </div>
                 </div>
             </div>
             <div className="col-2 d-flex justify-content-center">
-                <Form.Group controlId="exampleForm.ControlSelect1" className="w-50">
-                    <Form.Control as="select" custom>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </Form.Control>
-                </Form.Group>
+                {basket && (
+                    <>
+                        <Button
+                            size="small"
+                            color="secondary"
+                            variant="outlined"
+                            onClick={() => {
+                                RemoveItemFromBasket(product.id);
+                            }}
+                        >
+                        </Button>
+                        <>
+                            <Button
+                                size="small"
+                                variant="outlined"
+                                className="increase-product-quantity"
+                                onClick={() => {
+                                    updateProduct(product.id, product.quantity + 1);
+                                }}
+                            >
+                                +
+                </Button>
+                            <Typography className="quantity">&nbsp;{product.quantity}&nbsp;</Typography>
+                            <Button
+                                size="small"
+                                color="secondary"
+                                variant="outlined"
+                                className="increase-product-quantity"
+                                onClick={() => {
+                                    updateProduct(product.id, product.quantity - 1);
+                                }}
+                            >
+                                -
+                </Button>
+                        </>
+                    </>
+                )}
             </div>
             <div className="col-2 text-center text-pixprimary">
                 {product.price.formatted_with_symbol}
             </div>
             <div className="col-2 text-center text-pixprimary">
-                {product.price.formatted_with_symbol}
+                zł{product.price.raw * product.quantity}
             </div>
         </div>
     );
