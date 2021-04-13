@@ -3,6 +3,7 @@ import ikonax from "../../media/xboxb.png";
 import ikonaps from "../../media/psb.png";
 import ikonapc from "../../media/pcb.png";
 import ikonans from "../../media/nsb.png";
+import ikonaall from "../../media/infinity.png";
 import { Container } from "@material-ui/core";
 import "./style.css"
 import './filters.css'
@@ -35,7 +36,7 @@ const Products = ({ categories, addProduct }) => {
                 </div>
                 <div class="hexagon-wrapper" onClick={() => setTitle("all")}>
                     <div class="hexagon">
-                        <i><img src={ikonapc} /><p className="podtekst">WSZYSTKIE</p></i>
+                        <i><img src={ikonaall} /><p className="podtekst">WSZYSTKIE</p></i>
                     </div>
                 </div>
                 <div class="hexagon-wrapper" onClick={() => setTitle("pc")}>
