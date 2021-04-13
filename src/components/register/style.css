@@ -9,9 +9,9 @@
   background-size: contain;
   background-repeat: repeat;
 }
-h2 
+.kol2 h2
  {
-   font-size: 2vh;
+   font-size: 2.5vh;
    font-weight: normal;
    font-style: normal;
    font-weight: 600;
@@ -62,6 +62,9 @@ h2
  color: rgb(61, 19, 61);
  outline: none;
 }
+.inputFields:valid {
+  background-color: #ffffff;
+  }
 .inputFields:invalid {
 background-color: #ffd100;
 }
@@ -113,7 +116,7 @@ background-color: #ffd100;
    padding: 1px;
  }
  .kol2 input{
-   font-size: 2.2vh;
+   font-size: 2vh;
  }
  .box{
    padding-top: 100px;
@@ -121,7 +124,7 @@ background-color: #ffd100;
 }
 @media (max-width: 680px){
  .box{
-   padding-top: 135px;
+   padding-top: 100px;
  }
  .kol2{
    padding-top: 50px;
