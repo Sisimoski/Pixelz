@@ -60,19 +60,13 @@ class register extends Component {
 
     return (
         <>
-   
-        
         <div class="box">
         <div class="kol1"></div>
         <div class="kol2">
-            <h2> Przyspiesz proces łącząc swoje konto z naszym serwisem</h2><br></br>
-            <form action="#" method="POST" name="signOption">
-                <input type="button" value="Google"/>
-                <input type="button" value="Facebook"/><br></br><br></br><br></br>
-            </form>
 
             <form action="#" method="POST"  name="signdata">
             <n />
+        
             <h2>Dane konta</h2>
         
                 <li>

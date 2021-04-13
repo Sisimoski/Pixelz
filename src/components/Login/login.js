@@ -54,9 +54,9 @@ class login extends Component {
                         </li>
                     
                     <h3> Albo....</h3>
-                    <h2> Użyj konta Google</h2>
-                        <input type="button" value="Google"/><br></br>
-                        </ul>
+                      
+                        <a class="googleBtn" href="#"><img src="https://img.icons8.com/color/16/000000/google-logo.png" /> <b>Zaloguj się z Google</b></a><br /><br />
+                    </ul>
                 </form>
                 
                
