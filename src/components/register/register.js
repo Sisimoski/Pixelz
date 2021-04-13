@@ -58,6 +58,35 @@ class register extends Component {
 
     render() {
 
+
+    return (
+        <>
+        <div class="box">
+        <div class="kol1"></div>
+        <div class="kol2">
+
+            <form action="#" method="POST"  name="signdata">
+            <n />
+        
+            <h2>Dane konta</h2>
+        
+                <li>
+                    <label for="email"></label>
+                    <input class="inputFields" onChange={this.Email} type="e-mail" placeholder="Adres e-mail" pattern="[A-Za-z0-9-.,]{2,}@[A-Za-z0-9-]{2,}[.]{1}[a-zA-Z]{2,}" title="Podaj swój adres email" required />
+                </li>
+                <li>
+                    <label for="password"></label>
+                    <input class="inputFields" onChange={this.Password} type="password" id="password" placeholder="Hasło" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                        title="Hasło musi zawierać małą jak i duzą litere,znak specjalny oraz zawierać minimum 8 znaków" required />
+                </li>
+                <li>
+                    <label for="nick"></label>
+                    <input class="inputFields" onChange={this.Nick} type="text" id="nick" placeholder="Nick" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required />
+                </li>
+      
+        <br></br>
+        <h2>Dane kontaktowe</h2>
+
         return (
             <>
 

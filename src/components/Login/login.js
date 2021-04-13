@@ -53,6 +53,7 @@ class login extends Component {
                             <input type="submit" id="join-bt" name="join" alt="Join" value="Zaloguj" />
                         </li>
 
+
                         <h3> Albo....</h3>
                         <br />
                         <a class="googleBtn" href="#"><img src="https://img.icons8.com/color/16/000000/google-logo.png" /> <b>Zaloguj się z Google</b></a><br /><br />
