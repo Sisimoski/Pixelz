@@ -18,7 +18,8 @@ const CustomCard = ({
     RemoveItemFromBasket,
 }) => {
     return (
-        <Card className="custom-card">
+        < Card className="custom-card" >
+            { console.log(product)}
             <CardActionArea>
                 <CardMedia
                     component="img"
@@ -39,18 +40,20 @@ const CustomCard = ({
                     </Typography>
                 </CardContent>
             </CardActionArea>
-            {basket && (
-                <CardActions>
-                    <Typography
-                        className="basket-item-price"
-                        gutterBottom
-                        variant="h5"
-                        component="h2"
-                    >
-                        {product.price.formatted_with_symbol}
-                    </Typography>
-                </CardActions>
-            )}
+            {
+                basket && (
+                    <CardActions>
+                        <Typography
+                            className="basket-item-price"
+                            gutterBottom
+                            variant="h5"
+                            component="h2"
+                        >
+                            {product.price.formatted_with_symbol}
+                        </Typography>
+                    </CardActions>
+                )
+            }
             <CardActions className="actions-content">
                 {!basket && (
                     <>
@@ -111,7 +114,7 @@ const CustomCard = ({
                     </>
                 )}
             </CardActions>
-        </Card>
+        </Card >
     );
 };
 

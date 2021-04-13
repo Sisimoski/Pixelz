@@ -4,20 +4,39 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Products from './components/Products/';
 import Navbar from './components/Navbar/Navbar';
+import Navbar2 from './components/Navbar/Navbar2';
 import Intro from './components/Carousel/Intro';
-import Filters from './components/Filters/Filters';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import Register from './components/register/register';
 import Basket from './components/Basket/basket';
 import ProductView from './components/ProductView/ProductView';
+import Checkout from './components/Checkout/Checkout';
+import Confirmation from './components/Checkout/Confirmation';
+import Profile from './components/Profile/Profile';
 const App = () => {
-  const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [basketData, setBasketData] = useState([{}]);
+  const [orderInfo, setOrderInfo] = useState({});
+  const [orderError, setOrderError] = useState("");
 
   const fetchProducts = async () => {
-    const response = await commerce.products.list();
-    setProducts((response && response.data) || []);
+    const { data: products } = await commerce.products.list();
+    const { data: categories } = await commerce.categories.list();
+
+    const productsPerCategory = categories.reduce((acc, category) => {
+      return [
+        ...acc,
+        {
+          ...category,
+          productsData: products.filter((product) =>
+            product.categories.find((cat) => cat.id === category.id)
+          ),
+        },
+      ];
+    }, []);
+
+    setCategories((productsPerCategory) || []);
   };
 
   const fetchBasketData = async () => {
@@ -50,29 +69,53 @@ const App = () => {
     setBasketData(newBasketData);
   };
 
+  const handleCheckout = async (checkoutId, orderData) => {
+    try {
+      // const incomingOrder = await commerce.checkout.capture(
+      //   checkoutId,
+      //   orderData
+      // );
+
+      setOrderInfo(orderData);
+
+      refreshBasket();
+    } catch (error) {
+      setOrderError(
+        (error.data && error.data.error && error.data.error.message) ||
+        "There is an error occurred"
+      );
+    }
+  };
+
   useEffect(() => {
     fetchProducts();
     fetchBasketData();
+
   }, []);
-  console.log({ products });
   console.log({ basketData });
   return (
     <Router >
       <Switch>
         <div>
           <header>
-            <Navbar basketItems={basketData.total_items} totalCost={
+            <Navbar2 basketItems={basketData.total_items} totalCost={
               (basketData.subtotal &&
                 basketData.subtotal.formatted_with_symbol) ||
               "00.00"
             } />
           </header>
           <Route exact path="/">
+            <header>
+              <Navbar basketItems={basketData.total_items} totalCost={
+                (basketData.subtotal &&
+                  basketData.subtotal.formatted_with_symbol) ||
+                "00.00"
+              } />
+            </header>
             <main>
               <Intro />
               <div id="google"></div>
-              <Filters />
-              <Products products={products} addProduct={addProduct} />
+              <Products categories={categories} addProduct={addProduct} />
               <Contact />
             </main>
           </Route>
@@ -92,7 +135,22 @@ const App = () => {
           </Route>
           <Route exact path="/product-view/:id">
             <main>
-              <ProductView addProduct={addProduct} />
+              <ProductView categories={categories} addProduct={addProduct} />
+            </main>
+          </Route>
+          <Route exact path="/checkout">
+            <main>
+              <Checkout orderInfo={orderInfo} orderError={orderError} basketData={basketData} handleCheckout={handleCheckout} />
+            </main>
+          </Route>
+          <Route exact path="/confirmation">
+            <main>
+              <Confirmation handleEmptyBasket={handleEmptyBasket} />
+            </main>
+          </Route>
+          <Route exact path="/profile">
+            <main>
+              <Profile />
             </main>
           </Route>
           <footer>

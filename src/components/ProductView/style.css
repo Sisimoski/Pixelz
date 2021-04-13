@@ -1,38 +1,94 @@
-.MuiContainer-root.product.view{
-    height: 80vh;
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css");
+
+.productview{
+    height: 770px;
     display: flex;
     align-items: center;
-    margin: 150px 0 100px 0;
 }
-.product-view .image-wrapper img{
-    width: 50%;
-    margin-bottom: 200px;
+.productview  img{
+   margin-left: 300px;
+    width: 330px;
+    height: 450px;
 }
-.product-view .text{
+.productview .text{
     color: black;
+    width: 100%;
+    text-align: justify;
+  text-justify: inter-word;
 }
-.product-view .text h2{
-    font-size: 30px;
+.productview .text h2{
+    font-size: 50px;
 }
-.product-view .text span h1{
+.productview .text span h1{
    font-size: 20px;
    font-weight: 300;
 }
-.product-view .text h3{
+.productview .text h3{
     margin-bottom: 20px;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 300;
 } 
-.product-view .text .quantity{
+.productview .text .quantity{
    margin-bottom: 5px;
 }
-.MuiContainer-root.product.view .custom-button{
+
+.productScreens {
+    height: 300px;
+    width: auto;
+    object-fit: cover;
+}
+
+.linkOnImage {
+    position: absolute;
+    top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #2C0E37;
+}
+
+.linkOnImage:hover {
+    color: #2C0E37
+}
+
+ h2 {
+    color: #2C0E37;
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  .productDescription {
+      color: #2C0E37;
+      font-size: 14px;
+  }
+
+  .productSummary {
+      color: #2C0E37;
+  }
+
+  .productPrice {
+      color: #6E578F;
+      font-size: 28px;
+      margin: 0;
+  }
+
+.btn-pixPrimary {
+    background-color: #6E578F;
+    color: white;
+  }
+
+  .btn-pixSecondary {
+    background-color: #FFD103;
+    color: white;
+  }
+
+.MuiContainer.root.product.view .custom.button{
     color: black;
     background-color: blueviolet;
 }
-.MuiContainer-root.product.view .custom-button:hover{
+.MuiContainer.root.product.view .custom.button:hover{
   
 }
-.MuiContainer-root.product.view .custom-button svg{
+.MuiContainer.root.product.view .custom.button svg{
     margin-right: 10px;
 }

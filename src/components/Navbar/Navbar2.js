@@ -47,14 +47,7 @@ function SNavbar({ basketItems, totalCost }) {
                     <Navbar.Brand href="/"><img className="logo" alt="img" src={logo} /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <div className="NavOptions">
-                            <Nav className="mr-auto">
-                                <Nav.Link href="#baner" to="/" className="Aboutus" >O nas</Nav.Link>
-                                <Nav.Link href="#products" className="Products" >Produkty</Nav.Link>
-                                <Nav.Link href="#contact" className="Contact" >Kontakt</Nav.Link>
-                                <div id="indicator"></div>
-                            </Nav>
-                        </div>
+
                         <div className="basketContainer">
                             <div className="basket-wrapper">
                                 <IconButton
