@@ -9,9 +9,7 @@ import {
 } from '@material-ui/core'
 import React, { useEffect, useState, useRef } from 'react'
 import { commerce } from '../../lib/commerce';
-import CheckoutForm from './CheckoutForm';
 import "./style.css";
-import Booking from './Booking';
 import { Connections } from './Connections';
 const steps = ["dane-zamówienia", "szczegóły-zamówienia", "płatność"];
 

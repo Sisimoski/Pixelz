@@ -83,7 +83,7 @@ const ProductView = ({ addProduct, categories }) => {
                                 <Button variant="outline-dark" onClick={() => { handleQuantity("increase"); }}><i class="bi bi-plus"></i></Button>
                             </div>
                             <Button variant="pixSecondary" onClick={() => { addProduct(product.id, quantity); }}>
-                                Dodaj do koszyka
+                                <ShoppingCart /> Dodaj do koszyka
                         </Button>
                         </div>
                         <hr />

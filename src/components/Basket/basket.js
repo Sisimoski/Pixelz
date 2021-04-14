@@ -1,6 +1,5 @@
 import { React, useState } from 'react'
 import { Grid, ButtonMat, ContainerMat } from "@material-ui/core";
-import CustomCard from '../../CustomCard';
 import { Link } from "react-router-dom";
 import Empty from './Empty';
 import Spinner from '../Spinner/Spinner';

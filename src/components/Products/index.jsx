@@ -9,7 +9,6 @@ import "./style.css"
 import './filters.css'
 import SearchIcon from '@material-ui/icons/Search';
 import { useState } from "react";
-import Spinner from '../Spinner/Spinner';
 
 const Products = ({ categories, addProduct }) => {
     const [title, setTitle] = useState("all");

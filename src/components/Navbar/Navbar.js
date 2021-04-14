@@ -3,11 +3,10 @@ import { Navbar, Nav } from 'react-bootstrap';
 import logo from "../../media/baner.jpg"
 import { IconButton, Badge } from "@material-ui/core";
 import { ShoppingCart } from "@material-ui/icons";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Modal from 'react-modal';
 import "./style.css"
 import Login from '../Login/login.js';
-import Register from '../register/register';
 
 const customStyles = {
     content: {
@@ -22,8 +21,7 @@ const customStyles = {
         overflow: "hidden",
     }
 };
-function SNavbar({ basketItems, totalCost }) {
-    const location = useLocation();
+function SNavbar({ basketItems }) {
     function openPage() {
         window.location = '/register';
     }
