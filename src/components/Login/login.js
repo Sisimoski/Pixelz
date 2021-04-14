@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import './style.css';
+
 class login extends Component {
     constructor() {
         super();
@@ -52,6 +53,7 @@ class login extends Component {
                         <li id="center-btn">
                             <input type="submit" id="join-bt" name="join" alt="Join" value="Zaloguj" />
                         </li>
+
 
                         <h3> Albo....</h3>
                         <br />

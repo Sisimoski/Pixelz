@@ -36,9 +36,13 @@ transition-duration:  1s;
  .info h2 
   {
     padding-top: 30px;
-    font-size: 2.8vw;
-    font-weight: 800;
-    color: rgb(76, 5, 85);
+    font-size: 1.7vw;
+    font-weight: 500;
+    color: black;
+  }
+  .info p
+  {
+    font-weight: 600;
   }
 
   .icon 
@@ -56,11 +60,7 @@ transition-duration:  1s;
   background:rgba(44, 14, 55, 0.5);
   transition: .2s;
 }
-  .info h2 {
-    padding-top: 30px;
-    font-size: 1.7vw;
-    font-weight: 300;
-}
+
 .signupForm a{
   color: white;
   font-size: 0.9vw ;
@@ -109,7 +109,7 @@ transition-duration:  1s;
   width: 80%;
   background: rgba(110, 87, 143, 0.8);
   font-size: 1.2vw;
-  font-weight: 100;
+  font-weight: 500;
   color: rgba(243, 237, 249, 0.7);
   margin: 10px 10px 0px 10px;
   text-align: center;
