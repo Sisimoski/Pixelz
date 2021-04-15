@@ -2,19 +2,46 @@
   color: #6e3b8f
 }
 
+.module-title {
+  text-align: center;
+}
+
 #leftbox {
   float:left;
-  width:15%;
+  width:60%;
+  padding: 15px;
+
+}
+
+#leftbox-module {
+  background-color: #ffef9d;
+  float:left;
+  width:100%;
+  border-radius: 20px;
+}
+
+#left-leftbox {
+  float:left;
+  width:30%;
+  padding: 15px;
+
+}
+
+#right-leftbox {
+  float:left;
+  width:30%;
+  padding: 15px;
+
 }
 
 #middlebox {
-  float:left;
-  width:45%;
+  width: 5%;
 }
 
 #rightbox {
   float:right;
-  width:40%;
+  width:35%;
+  padding: 15px;
 }
 
 .avatar-box {
@@ -27,9 +54,10 @@
 }
 
 .history {
-  background-color: #f1faee;
+  background-color: #c5bcd2;
   border-radius: 20px;
   height: 300px;
+  color: #fff;
 }
 
 .view-account{
@@ -40,8 +68,11 @@ margin-top:20px;
 .btn-primary{
   background-color: #6e3b8f;
   border: 0;
+  width: 100%;
 }
 
 .btn-primary:hover{
-  background-color:#ffd60a;
+  background-color:#fff;
+  color: #ffd60a;
+  border: 0;
 }
