@@ -1,112 +1,100 @@
 .basketBannerContainer {
-    padding-top: 20px;
-    width: 100%;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    background-color: #21262d;
-    background-image: url('../../media/pad2.jpg');
-    background-repeat:no-repeat;
-    background-size:cover;
-    background-position: center;
-    font-family: 'Lato', sans-serif;
-  }
-  
-  .emptyButton{
-    padding-top: 350px;
-      justify-content: center;
-      margin: auto;
-  }
-  .emptyTekst{
+  padding-top: 20px;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  background-color: #21262d;
+  background-image: url('../../media/pad2.jpg');
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position: center;
+  font-family: 'Lato', sans-serif;
+}
+
+.emptyButton{
+  padding-top: 350px;
+    justify-content: center;
     margin: auto;
-    margin-top: 200px;
-    color: white;
-    font-weight: bolder;
-    font-family: 'Lato', sans-serif;
-    text-align: center;
-  }
-  .emptyTekst img{
-    width: 30vh;
-    margin-left: 100px;
-  }
+}
+.emptyTekst{
+  margin: auto;
+  margin-top: 200px;
+  color: white;
+  font-weight: bolder;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+}
+.emptyTekst img{
+  width: 30vh;
+  margin-left: 100px;
+}
 
-  
- a.shopping-button {
-   font-weight: bolder;
-      width: 20vw;
-      height: 50px;
-    color: #000000;
-    background-color: #03dac5;
-  }
 
-  .summaryBg {
-    background-color: #EBEBEB;
-  }
+a.shopping-button {
+ font-weight: bolder;
+    width: 20vw;
+    height: 50px;
+  color: #000000;
+  background-color: #03dac5;
+}
 
-  .btn-pixPrimary {
-    background-color: #6E578F;
-    color: white;
-  }
-    .btn-pixSecondary {
-    background-color: #FFD103;
-  }
+.summaryBg {
+  background-color: #EBEBEB;
+}
 
-  .text-pixprimary {
-    color: #2C0E37;
-  }
+.btn-pixPrimary {
+  background-color: #6E578F;
+  color: white;
+}
+  .btn-pixSecondary {
+  background-color: #FFD103;
+}
 
-  h2 {
-    color: #2C0E37;
-    font-size: 40px;
-    font-weight: bold;
-  }
+.text-pixprimary {
+  color: #2C0E37;
+}
 
-  .cartDescription {
-    color: #2C0E37;
-    font-size: 26px;
-    margin: 0;
-  }
+h2 {
+  color: #2C0E37;
+  font-size: 40px;
+  font-weight: bold;
+}
 
-  .cartItemTitle {
-    color: #2C0E37;
-    font-size: 28px;
-    margin: 0;
-  }
+.cartDescription {
+  color: #2C0E37;
+  font-size: 26px;
+  margin: 0;
+}
 
-  .cartItemPlatform {
-    color: #5C6F92;
-    font-size: 20px;
-    margin: 0;
-  }
+.cartItemTitle {
+  color: #2C0E37;
+  font-size: 28px;
+  margin: 0;
+}
 
-  .cartItemImage {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-  }
-  @media (max-width: 1001px) {
-   
-  }
+.cartItemPlatform {
+  color: #5C6F92;
+  font-size: 20px;
+  margin: 0;
+}
 
-  
+.cartItemImage {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+@media (max-width: 1001px) {
+ 
+}
+
+
 .custom-button:hover {
-    background-color: #bb86fc;
-    color: #c9d1d9;
-  }
-  
+  background-color: #bb86fc;
+  color: #c9d1d9;
+}
+
 .custom-button svg {
-    margin-right: 10px;
-  }
-  
-.increase-product-quantity {
-    color: #8b03da;
-    border-color: #8b03da;
-    height: 40px;
-    width: 40px;
-  }
-  .quantity{
-    padding-left: 10px;
-    padding-right: 10px;
-    color: #8b03da;
-    font-size: 14px;
-  }
+  margin-right: 10px;
+}
+
