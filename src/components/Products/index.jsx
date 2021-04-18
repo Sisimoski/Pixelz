@@ -12,6 +12,8 @@ import { useState } from "react";
 
 const Products = ({ categories, addProduct }) => {
     const [title, setTitle] = useState("all");
+    const [name, setName] = useState('')
+    console.log("nazwa: ", name);
     return (
         <div>
 
@@ -52,28 +54,18 @@ const Products = ({ categories, addProduct }) => {
 
             <div className="searchContainer">
                 <form class>
-                    <input type="search" placeholder="Search" aria-label="Search" />
-                    <button type="submit"><SearchIcon></SearchIcon></button>
+                    <input type="search" placeholder="Search" aria-label="Search" onChange={event => setName(event.target.value)} />
+                    <button ><SearchIcon /></button>
                 </form>
             </div>
 
             {console.log(categories)}
+
             <div className="product-container">
                 {categories.map((category) => {
-                    if (title == "all") {
-                        { console.log(category) }
-                        return (
-                            <>
-                                {
-                                    category.productsData.map((product) => {
-                                        return <Product product={product} addProduct={addProduct} />
-                                    })
-                                }
-                            </>
-                        )
-                    } else if (title == "xbox") {
-                        { console.log(category) }
-                        if (category.slug == 'xbox') {
+                    if (name == '') {
+                        if (title == "all") {
+                            { console.log(category) }
                             return (
                                 <>
                                     {
@@ -83,52 +75,88 @@ const Products = ({ categories, addProduct }) => {
                                     }
                                 </>
                             )
+                        } else if (title == "xbox") {
+                            { console.log(category) }
+                            if (category.slug == 'xbox') {
+                                return (
+                                    <>
+                                        {
+                                            category.productsData.map((product) => {
+                                                return <Product product={product} addProduct={addProduct} />
+                                            })
+                                        }
+                                    </>
+                                )
+                            }
+                        }
+                        else if (title == "playstation") {
+                            { console.log(category) }
+                            if (category.slug == 'ps4') {
+                                return (
+                                    <>
+                                        {
+                                            category.productsData.map((product) => {
+                                                return <Product product={product} addProduct={addProduct} />
+                                            })
+                                        }
+                                    </>
+                                )
+                            }
+                        }
+                        else if (title == "nintendo") {
+                            { console.log(category) }
+                            if (category.slug == 'nintendo') {
+                                return (
+                                    <>
+                                        {
+                                            category.productsData.map((product) => {
+                                                return <Product product={product} addProduct={addProduct} />
+                                            })
+                                        }
+                                    </>
+                                )
+                            }
+                        }
+                        else if (title == "pc") {
+                            { console.log(category) }
+                            if (category.slug == 'pc') {
+                                return (
+                                    <>
+                                        {
+                                            category.productsData.map((product) => {
+                                                return <Product product={product} addProduct={addProduct} />
+                                            })
+                                        }
+                                    </>
+                                )
+                            }
                         }
                     }
-                    else if (title == "playstation") {
-                        { console.log(category) }
-                        if (category.slug == 'ps4') {
-                            return (
-                                <>
-                                    {
-                                        category.productsData.map((product) => {
-                                            return <Product product={product} addProduct={addProduct} />
-                                        })
-                                    }
-                                </>
-                            )
-                        }
-                    }
-                    else if (title == "nintendo") {
-                        { console.log(category) }
-                        if (category.slug == 'nintendo') {
-                            return (
-                                <>
-                                    {
-                                        category.productsData.map((product) => {
-                                            return <Product product={product} addProduct={addProduct} />
-                                        })
-                                    }
-                                </>
-                            )
-                        }
-                    }
-                    else if (title == "pc") {
-                        { console.log(category) }
-                        if (category.slug == 'pc') {
-                            return (
-                                <>
-                                    {
-                                        category.productsData.map((product) => {
-                                            return <Product product={product} addProduct={addProduct} />
-                                        })
-                                    }
-                                </>
-                            )
-                        }
-                    }
+                    else {
 
+                        for (var i = 0; i <= 100; i++)
+                            for (var k = 0; k <= 10; k++)
+                                if (typeof category.productsData[k] !== "undefined" && category.productsData[k].name.charAt(0).toUpperCase() == name.charAt(0).toUpperCase()) {
+                                    { console.log("productsdata: ", category.productsData[i].name.charAt(i)) }
+                                    return (
+                                        <>
+                                            {
+                                                category.productsData.map((product) => {
+                                                    //{ console.log("produkt: ", product) }
+                                                    if (product.name.charAt(i).toUpperCase() == name.charAt(i).toUpperCase())
+                                                        return <Product product={product} addProduct={addProduct} />
+
+                                                })
+
+                                            }
+                                        </>
+                                    )
+                                }
+
+
+                    }
                 })}
+
             </div>
 
         </div >
