@@ -32,7 +32,7 @@ const Basket = ({
     if (!basketData.line_items || !basketData.line_items.length) return loading();
     return (
         <div class="container-fluid">
-            <div class="row mx-3 justify-content-between">
+            <div class="row mx-xl-3 justify-content-between">
                 <div class="col">
                     <h2>Koszyk</h2>
                     <div className="d-flex justify-content-between align-items-end">
@@ -70,8 +70,8 @@ const Basket = ({
                     })}
 
                 </div>
-                <div className="col-auto summaryBg">
-                    <div className="m-4">
+                <div className="col-12 col-xl-auto summaryBg px-4 px-xl-0">
+                    <div className="py-4 m-lg-4">
                         <h2>Podsumowanie</h2>
                         <hr />
                         <div className="d-flex justify-content-between">
