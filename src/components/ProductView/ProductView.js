@@ -35,16 +35,13 @@ const ProductView = ({ addProduct, categories }) => {
             setQuantity(quantity + 1);
         }
     }
-    //console.log("id produktu: ", product)
-    //console.log("category", categories)
-    //console.log("id produktu kat:", categories[0].productsData[1].id)
     const [showSpinner, setShowSpinner] = useState(true);
     const loading = () => {
         setTimeout(() => {
             setShowSpinner(false);
         }, 2000);
         if (showSpinner) {
-            return <Spinner />;
+            return <Spinner/>;
         }
     };
     function category() {
@@ -73,8 +70,8 @@ const ProductView = ({ addProduct, categories }) => {
                 <div className="row mx-5">
                     <div className="col">
                         <h2>{product.name}</h2>
-                        <h4 className="font-weight-light text-muted">{category()}</h4>
-                        <Image src={product.src} className="productScreens" fluid />
+                        <h4 >{category()}</h4>
+                        <Image src={product.src} className="productScreens" fluid /> 
                         <div className="d-flex justify-content-between align-items-center mt-5">
                             <p className="productPrice font-weight-light">{product.price}</p>
                             <div className="ml-auto mr-3 d-flex align-items-center">
@@ -87,67 +84,15 @@ const ProductView = ({ addProduct, categories }) => {
                         </Button>
                         </div>
                         <hr />
-                    </div>
-                    <div className="col-4">
-                        <Typography className="text" variant="subtitle1" dangerouslySetInnerHTML={createMarkup(product.description)} />
+                   </div>
+                    <div className="productDescription">
+                        <p><Typography dangerouslySetInnerHTML={createMarkup(product.description)} /></p>
                     </div>
                 </div>
-                <div className="row mx-5 my-4">
-                </div>
+               
             </div>
         </div >
-        // <Container className="productview">
-        //     <Grid container spacing={4}>
-        //         <Grid item xs={12} md={6} className="image-wrapper">
-        //             <img
-        //                 onLoad={() => {
-        //                     setLoading(false);
-        //                 }}
-        //                 src={product.src}
-        //                 alt={product.name}
-        //             />
-        //         </Grid>
-        //         <Grid item xs={12} md={6} className="text">
-        //             <Typography variant="h2">{product.name}</Typography>
-        //             <Typography variant="subtitle1" dangerouslySetInnerHTML={createMarkup(product.description)}
-        //             />
-        //             <Typography variant="h3">Cena: {product.price}</Typography>
-        //             <Grid container spacing={4}>
-        //                 <Grid item xs={12}>
-        //                     <Button size="small" variant="contained" className="increase-product-quantity"
-        // onClick={() => {
-        //     handleQuantity("increase");
-        // }}
-        //                     >+</Button>
-        //                 </Grid>
-        //                 <Grid item xs={12}>
-        //                     <Typography className="quantity" variant="h3">
-        //                         Ilość: {quantity}
-        //                     </Typography>
-        //                 </Grid>
-        //                 <Grid item xs={12}>
-        //                     <Button size="small" color="secondary" variant="contained" className="increase-product-quantity"
-        // onClick={() => {
-        //     handleQuantity("decries");
-        // }}
-        //                     >-</Button>
-        //                 </Grid>
-        //                 <Grid item xs={12}>
-        //                     <Button size="large" className="custom-button"
-        // onClick={() => {
-        //     addProduct(product.id, quantity);
-        // }}
-        //                     >
-        //                         <ShoppingCart />Dodaj do koszyka
-        //                     </Button>
-        //                 </Grid>
-        //             </Grid>
-        //         </Grid>
-        //     </Grid>
-        //     {loading && <Spinner />}
-        // </Container>
     )
-
 }
 
 export default ProductView

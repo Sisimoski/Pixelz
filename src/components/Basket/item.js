@@ -12,7 +12,7 @@ const Item = ({
 }) => {
     return (
         <div className="row my-4">
-            <div className="col-6">
+            <div className="col-12 col-md-6">
                 <div className="row">
                     <div className="col-auto">
                         <Image src={product.media.source} className="cartItemImage" rounded />
@@ -26,7 +26,7 @@ const Item = ({
                     </div>
                 </div>
             </div>
-            <div className="col-2 d-flex justify-content-center">
+            <div className="col-auto mt-3 mt-md-0 col-md-2 d-flex justify-content-center">
                 {basket && (
                     <>
                         <Button
@@ -65,10 +65,10 @@ const Item = ({
                     </>
                 )}
             </div>
-            <div className="col-2 text-center text-pixprimary">
+            <div className="col col-md-2 mt-2 mt-md-0 text-center text-pixprimary">
                 {product.price.formatted} ZŁ
             </div>
-            <div className="col-2 text-center text-pixprimary">
+            <div className="col col-md-2 mt-2 mt-md-0 text-center text-pixprimary">
                 {product.price.raw * product.quantity} ZŁ
             </div>
         </div>

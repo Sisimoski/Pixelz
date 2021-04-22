@@ -4,11 +4,14 @@
     height: 770px;
     display: flex;
     align-items: center;
+    padding-top: 25px;
+    margin-bottom: 40px;
+
 }
 .productview  img{
-   margin-left: 300px;
-    width: 330px;
-    height: 450px;
+   margin-left: 40%;
+    width: 350px;
+    height: auto;
 }
 .productview .text{
     color: black;
@@ -16,16 +19,19 @@
     text-align: justify;
   text-justify: inter-word;
 }
-.productview .text h2{
-    font-size: 50px;
+.productview h2{
+    font-size: 2vw;
+}
+.productview h4{
+    font-size: 1.4vw;
 }
 .productview .text span h1{
    font-size: 20px;
    font-weight: 300;
 }
-.productview .text h3{
+.productview h3{
     margin-bottom: 20px;
-    font-size: 30px;
+    font-size: 1vw;
     font-weight: 300;
 } 
 .productview .text .quantity{
@@ -51,17 +57,16 @@
     color: #2C0E37
 }
 
- h2 {
-    color: #2C0E37;
-    font-size: 40px;
-    font-weight: bold;
-  }
-
   .productDescription {
+      
+      display: flex;
+      width: 50%;
       color: #2C0E37;
-      font-size: 14px;
   }
-
+  .productDescription p{
+    font-size: 1.2vw; 
+  }
+ 
   .productSummary {
       color: #2C0E37;
   }
@@ -86,9 +91,67 @@
     color: black;
     background-color: blueviolet;
 }
-.MuiContainer.root.product.view .custom.button:hover{
-  
-}
+
 .MuiContainer.root.product.view .custom.button svg{
     margin-right: 10px;
+}
+@media (max-width: 1550px){
+    .productview{
+     padding-top: 100px;
+    }
+    .productview  img{
+        margin-left: 10vw;
+        
+     }
+     .productDescription p{
+        font-size: 1.8vw !important; 
+      }
+     
+}
+@media (max-width: 1260px){
+    .productview{
+     padding-top: 200px;
+     margin-bottom: 90px;
+    }
+    .productview  img{
+        margin-left: 0;
+        width: 0.8;
+        height: 0.8;
+        
+     }
+     .productDescription p{
+        font-size: 1.8vw !important; 
+      }
+     
+}
+@media (max-width: 810px){
+    .productview{
+        padding-top: 155px;
+        margin-bottom: 30px;
+       }
+    .productview  img{
+        margin-left: 0;
+        
+     }
+     .productDescription p{
+        font-size: 2.5vw !important; 
+      }
+      .productview h2{
+        font-size: 2.5vw;
+    }
+    .productview h4{
+        font-size: 2vw;
+    }
+}
+@media (max-width: 680px){
+    .productview{
+        padding-top: 155px;
+        margin-bottom: 0px;
+       }
+    
+}
+@media (max-width: 580px){
+    .productview{
+        padding-top: 25px;
+       }
 }
