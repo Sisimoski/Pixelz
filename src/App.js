@@ -15,14 +15,16 @@ import Checkout from './components/Checkout/Checkout';
 import Confirmation from './components/Checkout/Confirmation';
 import Profile from './components/Profile/Profile';
 const App = () => {
+  const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [basketData, setBasketData] = useState([{}]);
   const [orderInfo, setOrderInfo] = useState({});
   const [orderError, setOrderError] = useState("");
 
   const fetchProducts = async () => {
-    const { data: products } = await commerce.products.list();
-    const { data: categories } = await commerce.categories.list();
+    const response = await commerce.products.list({ limit: 200 });
+    const { data: products } = await commerce.products.list({ limit: 200 });
+    const { data: categories } = await commerce.categories.list({ limit: 200 });
 
     const productsPerCategory = categories.reduce((acc, category) => {
       return [
@@ -37,6 +39,7 @@ const App = () => {
     }, []);
 
     setCategories((productsPerCategory) || []);
+    setProducts((response && response.data) || []);
   };
 
   const fetchBasketData = async () => {
@@ -135,7 +138,7 @@ const App = () => {
           </Route>
           <Route exact path="/product-view/:id">
             <main>
-              <ProductView categories={categories} addProduct={addProduct} />
+              <ProductView categories={categories} addProduct={addProduct} products={products} />
             </main>
           </Route>
           <Route exact path="/checkout">
