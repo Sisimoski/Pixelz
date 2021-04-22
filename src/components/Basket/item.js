@@ -49,7 +49,7 @@ const Item = ({
                             >
                                 +
                 </Button>
-                            <Typography className="quantity">&nbsp;{product.quantity}&nbsp;</Typography>
+                            <p className="quantity">&nbsp;{product.quantity}&nbsp;</p>
                             <Button
                                 size="small"
                                 color="secondary"
@@ -66,10 +66,10 @@ const Item = ({
                 )}
             </div>
             <div className="col-2 text-center text-pixprimary">
-                {product.price.formatted_with_symbol}
+                {product.price.formatted} ZŁ
             </div>
             <div className="col-2 text-center text-pixprimary">
-                zł{product.price.raw * product.quantity}
+                {product.price.raw * product.quantity} ZŁ
             </div>
         </div>
     );

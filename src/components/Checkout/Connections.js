@@ -7,7 +7,6 @@ import Confirmation from "./Confirmation";
 export const Connections = ({
     user,
     orderInfo,
-    orderError,
     totalPrice,
     bookingStep,
     handleChange,
