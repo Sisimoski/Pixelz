@@ -39,7 +39,7 @@
   }
   .product-card{
     margin: 3%;
-    width: 280px;
+    width: 300px;
    
   }
   .product-card .content {
@@ -66,12 +66,12 @@
   }
   
   .product-card .custom-button {
-    width: 90%;
+    width: 100%;
     color:black
   }
   
   .product-card .custom-button:hover {
-    background-color: #03dac5;
+    background-color: #b603da;
     color: #000000;
   }
   
