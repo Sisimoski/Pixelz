@@ -6,8 +6,8 @@
   justify-content: center;
   flex-wrap: wrap;
   background-image: url("../../media/test.jpg");
-  background-size: contain;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .kol2 h2
  {
