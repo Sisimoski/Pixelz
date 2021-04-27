@@ -1,13 +1,8 @@
 import { React, useState } from 'react'
-import { Grid, ButtonMat, ContainerMat } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Grid } from "@material-ui/core";
 import Empty from './Empty';
 import Spinner from '../Spinner/Spinner';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import Image from 'react-bootstrap/Image';
 import { Form } from 'react-bootstrap';
 import './style.css';
 import Item from './item.js'
@@ -17,6 +12,7 @@ const Basket = ({
     updateProduct,
     handleEmptyBasket,
     RemoveItemFromBasket,
+    products,
 }) => {
     const [showSpinner, setShowSpinner] = useState(true);
     const loading = () => {
@@ -28,8 +24,8 @@ const Basket = ({
         }
         return <Empty />;
     };
-
-    if (!basketData.line_items || !basketData.line_items.length) return loading();
+    //console.log("produkts:", products)
+    if (!basketData.line_items || !basketData.line_items.length || !products.length) return loading();
     return (
         <div class="container-fluid">
             <div class="row mx-xl-3 justify-content-between">
@@ -64,6 +60,7 @@ const Basket = ({
                                     product={item}
                                     updateProduct={updateProduct}
                                     RemoveItemFromBasket={RemoveItemFromBasket}
+                                    products={products}
                                 />
                             </Grid>
                         );

@@ -1,4 +1,3 @@
-import { CircularProgress } from "@material-ui/core";
 import "./style.css";
 import animacja from '../../media/animacja2.gif';
 
