@@ -56,7 +56,7 @@ const Profile = () => {
                   <br /><br />
 
                   <div class="form-group">
-                    <input class="btn btn-primary" type="submit" value="Zaktualizuj profil" />
+                    <input class="buttonS" type="submit" value="Zaktualizuj profil" />
                   </div>
                   <br /><br />
                 </div>
