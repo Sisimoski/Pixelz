@@ -83,7 +83,7 @@ class register extends Component {
                 </li>
                 <li>
                     <label for="nick"></label>
-                    <input class="inputFields" onChange={this.Nick} type="text" id="nick" placeholder="Nick" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required />
+                    <input class="inputFields" onChange={this.Nick} type="text" id="nick" placeholder="Nick" pattern="(?=^.{5,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required />
                 </li>
       
         <br></br>
@@ -91,15 +91,15 @@ class register extends Component {
 
                             <li>
                                 <label for="name"></label>
-                                <input class="inputFields" onChange={this.Name} type="text" placeholder="Imie" pattern="[A-Za-z]{1,32}" title="Podaj swoje imie" required />
+                                <input class="inputFields" onChange={this.Name} type="text" placeholder="Imie" pattern="(?=^.{1,32}[A-Za-ZąćęłńóśźżĄĘŁŃÓŚŹŻ]"  title="Podaj swoje imie" required />
                             </li>
                             <li>
                                 <label for="surname"></label>
-                                <input class="inputFields" onChange={this.Surname} type="text" id="surname" placeholder="Nazwisko" pattern="[A-Za-z]{1,32}" required />
+                                <input class="inputFields" onChange={this.Surname} type="text" id="surname" placeholder="Nazwisko" pattern="(?=^.{1,32}[A-Za-ZąćęłńóśźżĄĘŁŃÓŚŹŻ]"  required />
                             </li>
                             <li>
                                 <label for="street"></label>
-                                <input class="inputFields" onChange={this.Street} type="text" id="street" placeholder="Ulica i numer" required />
+                                <input class="inputFields" onChange={this.Street} type="text" id="street" placeholder="Ulica i numer" pattern="(?=^.{1,32}[A-Za-ZąćęłńóśźżĄĘŁŃÓŚŹŻ]" required />
                             </li>
                             <li>
                                 <label for="postalCode"></label>
@@ -107,11 +107,11 @@ class register extends Component {
                             </li>
                             <li>
                                 <label for="Town"></label>
-                                <input class="inputFields" onChange={this.Town} type="text" id="Town" placeholder="Miejscowość" pattern="[A-Za-z] {1,32}" required />
+                                <input class="inputFields" onChange={this.Town} type="text" id="Town" placeholder="Miejscowość" pattern="(?=^.{1,32}[A-Za-ZąćęłńóśźżĄĘŁŃÓŚŹŻ]" required />
                             </li>
                             <li>
                                 <label for="Phone"></label>
-                                <input class="inputFields" onChange={this.Phone} type="tel" id="Phone" placeholder="Numer telefonu" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required />
+                                <input class="inputFields" onChange={this.Phone} type="tel" id="Phone" placeholder="Numer telefonu" pattern="[0-9]{9}" required />
                             </li>
                             <li id="center-btn">
                      <input class="join-btn" type="submit" id="join-btn" name="join" alt="Join" value="Join"/>

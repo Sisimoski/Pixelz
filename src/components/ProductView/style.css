@@ -1,15 +1,21 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css");
 
 .productview{
-    height: 770px;
+    min-height: 770px;
     display: flex;
+    flex-flow: row wrap;
     align-items: center;
     padding-top: 25px;
     margin-bottom: 40px;
 
 }
+.productview > *{
+    flex: 1 100%;
+}
 .productview  img{
-   margin-left: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     width: 350px;
     height: auto;
 }
@@ -58,10 +64,8 @@
 }
 
   .productDescription {
-      
-      display: flex;
-      width: 50%;
       color: #2C0E37;
+      margin-bottom: 20px;
   }
   .productDescription p{
     font-size: 1.2vw; 
@@ -99,10 +103,6 @@
     .productview{
      padding-top: 100px;
     }
-    .productview  img{
-        margin-left: 10vw;
-        
-     }
      .productDescription p{
         font-size: 1.8vw !important; 
       }
@@ -113,12 +113,6 @@
      padding-top: 200px;
      margin-bottom: 90px;
     }
-    .productview  img{
-        margin-left: 0;
-        width: 0.8;
-        height: 0.8;
-        
-     }
      .productDescription p{
         font-size: 1.8vw !important; 
       }
@@ -126,32 +120,34 @@
 }
 @media (max-width: 810px){
     .productview{
-        padding-top: 155px;
+        padding-top: 175px;
         margin-bottom: 30px;
+        flex: 2 0px;
        }
     .productview  img{
-        margin-left: 0;
-        
+        order: 1; 
      }
      .productDescription p{
+        order: 2;
         font-size: 2.5vw !important; 
       }
       .productview h2{
-        font-size: 2.5vw;
+        font-size: 3.5vw;
     }
     .productview h4{
-        font-size: 2vw;
+        font-size: 2.5vw;
     }
 }
 @media (max-width: 680px){
     .productview{
         padding-top: 155px;
         margin-bottom: 0px;
+        flex: 1 auto;
        }
     
 }
 @media (max-width: 580px){
     .productview{
-        padding-top: 25px;
+        padding-top: 155px;
        }
 }
