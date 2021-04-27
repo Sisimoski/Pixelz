@@ -128,7 +128,9 @@ const App = () => {
                 basketData={basketData}
                 updateProduct={updateProduct}
                 handleEmptyBasket={handleEmptyBasket}
-                RemoveItemFromBasket={RemoveItemFromBasket} />
+                RemoveItemFromBasket={RemoveItemFromBasket}
+                products={products}
+              />
             </main>
           </Route>
           <Route exact path="/register">
