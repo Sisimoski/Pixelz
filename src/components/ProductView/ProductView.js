@@ -105,7 +105,27 @@ const ProductView = ({ addProduct, categories, products }) => {
                                         <ShoppingCart /> Dodaj do koszyka
                                     </Button>
                                 </div>
-                                
+                                {/* Mobile */}
+                                <div className="d-md-none">
+                                    <div className="row">
+                                        <div className="col">
+                                            <p className="productPrice font-weight-light text-center">{product.price}</p>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-auto d-flex">
+                                            <Button variant="outline-dark" onClick={() => { handleQuantity("decries"); }}><i class="bi bi-dash"></i></Button>
+                                            <p className="mx-3 my-0">Ilość: {quantity}</p>
+                                            <Button variant="outline-dark" onClick={() => { handleQuantity("increase"); }}><i class="bi bi-plus"></i></Button>
+
+                                        </div>
+                                        <div className="col">
+                                            <Button variant="pixSecondary" block onClick={() => { addProduct(product.id, quantity); }}>
+                                                <ShoppingCart /> Dodaj
+                                            </Button>
+                                        </div>
+                                    </div>
+                                </div>
                                 <hr/>
                             </div>
                         </div>
