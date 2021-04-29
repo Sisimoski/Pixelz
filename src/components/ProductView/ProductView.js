@@ -84,7 +84,62 @@ const ProductView = ({ addProduct, categories, products }) => {
     return (
         <div className="productview">
             <div className="container-fluid">
-                <div className="row mx-5">
+                <div className="row mx-md-5">
+                    <div className="col-12 col-md-4">
+                        <Image src={product.src} className="productScreens" fluid />
+                    </div>
+                    <div className="col-12 col-md-8">
+                        <div className="row">
+                            <div className="col">
+                                <h2>{product.name}</h2>
+                                <h4 >{category2()}</h4>
+                                {/* Desktop */}
+                                <div className="d-none d-md-flex justify-content-between align-items-center">
+                                    <p className="productPrice font-weight-light">{product.price}</p>
+                                    <div className="ml-auto mr-3 d-flex align-items-center">
+                                        <Button variant="outline-dark" onClick={() => { handleQuantity("decries"); }}><i class="bi bi-dash"></i></Button>
+                                        <p className="mx-3 my-0">Ilość: {quantity}</p>
+                                        <Button variant="outline-dark" onClick={() => { handleQuantity("increase"); }}><i class="bi bi-plus"></i></Button>
+                                    </div>
+                                    <Button variant="pixSecondary" onClick={() => { addProduct(product.id, quantity); }}>
+                                        <ShoppingCart /> Dodaj do koszyka
+                                    </Button>
+                                </div>
+                                {/* Mobile */}
+                                <div className="d-md-none">
+                                    <div className="row">
+                                        <div className="col">
+                                            <p className="productPrice font-weight-light text-center">{product.price}</p>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-auto d-flex">
+                                            <Button variant="outline-dark" onClick={() => { handleQuantity("decries"); }}><i class="bi bi-dash"></i></Button>
+                                            <p className="mx-3 my-0">Ilość: {quantity}</p>
+                                            <Button variant="outline-dark" onClick={() => { handleQuantity("increase"); }}><i class="bi bi-plus"></i></Button>
+
+                                        </div>
+                                        <div className="col">
+                                            <Button variant="pixSecondary" block onClick={() => { addProduct(product.id, quantity); }}>
+                                                <ShoppingCart /> Dodaj
+                                            </Button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr/>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col">
+                                <div className="productDescription">
+                                    <p><Typography dangerouslySetInnerHTML={createMarkup(product.description)} /></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* <div className="row mx-5">
                     <div className="col">
                         <h2>{product.name}</h2>
                         <h4 >{category2()}</h4>
@@ -105,7 +160,7 @@ const ProductView = ({ addProduct, categories, products }) => {
                     <div className="productDescription">
                         <p><Typography dangerouslySetInnerHTML={createMarkup(product.description)} /></p>
                     </div>
-                </div>
+                </div> */}
 
             </div>
         </div >
