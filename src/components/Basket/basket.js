@@ -67,7 +67,7 @@ const Basket = ({
                     })}
 
                 </div>
-                <div className="col-12 col-xl-auto summaryBg px-4 px-xl-0">
+                <div className="col-12 col-xl-auto summaryBg px-4 px-xl-0 summaryPanel">
                     <div className="py-4 m-lg-4">
                         <h2>Podsumowanie</h2>
                         <hr />
@@ -76,12 +76,7 @@ const Basket = ({
                             <p className="font-weight-bold text-uppercase m-0">{basketData.subtotal.formatted_with_code}</p>
                         </div>
                         <Form className="my-5">
-                            <Form.Group className="text-uppercase" controlId="">
-                                <Form.Label>Wysyłka</Form.Label>
-                                <Form.Control as="select" custom>
-                                    <option>Przesyłka standardowa - 9.00 PLN</option>
-                                </Form.Control>
-                            </Form.Group>
+                            
                             <Form.Group className="text-uppercase" controlId="">
                                 <Form.Label>Kod promocyjny</Form.Label>
                                 <Form.Control placeholder="Wprowadź kod promocyjny..." />
