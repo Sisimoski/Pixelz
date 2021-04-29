@@ -68,7 +68,7 @@
       margin-bottom: 20px;
   }
   .productDescription p{
-    font-size: 1.2vw; 
+    /* font-size: 1.2vw;  */
   }
  
   .productSummary {
@@ -104,7 +104,7 @@
      padding-top: 100px;
     }
      .productDescription p{
-        font-size: 1.8vw !important; 
+        /* font-size: 1.8vw !important;  */
       }
      
 }
@@ -114,7 +114,7 @@
      margin-bottom: 90px;
     }
      .productDescription p{
-        font-size: 1.8vw !important; 
+        /* font-size: 1.8vw !important;  */
       }
      
 }
@@ -129,7 +129,8 @@
      }
      .productDescription p{
         order: 2;
-        font-size: 2.5vw !important; 
+        /* font-size: 2.5vw !important;  */
+        font-size: 1rem;
       }
       .productview h2{
         font-size: 3.5vw;
@@ -143,6 +144,9 @@
         padding-top: 155px;
         margin-bottom: 0px;
         flex: 1 auto;
+       }
+       .productDescription p {
+           font-size: 0.9rem;
        }
     
 }
