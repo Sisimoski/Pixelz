@@ -91,8 +91,8 @@ const ProductView = ({ addProduct, categories, products }) => {
                     <div className="col-12 col-md-8">
                         <div className="row">
                             <div className="col">
-                                <h2>{product.name}</h2>
-                                <h4 >{category2()}</h4>
+                                <h1 className="display-3">{product.name}</h1>
+                                <h4>{category2()}</h4>
                                 {/* Desktop */}
                                 <div className="d-none d-md-flex justify-content-between align-items-center">
                                     <p className="productPrice font-weight-light">{product.price}</p>
