@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css");
+
 .rightside{
     float: right;
     margin-right: 5%;
@@ -17,6 +19,27 @@
     justify-content: space-between;
     margin: auto;
     width: 100%;
+    background-color: #F3EDF9;
  
-    border-top: 20px solid black;
+    border-top: 1px solid rgb(199, 199, 199);
+}
+
+.footerBg {
+    background-color: #F3EDF9;
+}
+
+h6 {
+    font-size: 0.7rem;
+}
+
+p {
+    font-size: 0.9rem;
+}
+
+.footerPadding {
+    padding: 3rem 1.5rem 3rem;
+}
+
+.bi {
+    margin: 0 1rem 0;
 }
