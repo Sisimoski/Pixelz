@@ -1,13 +1,8 @@
 import { React, useState } from 'react'
-import { Grid, ButtonMat, ContainerMat } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Grid } from "@material-ui/core";
 import Empty from './Empty';
 import Spinner from '../Spinner/Spinner';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import Image from 'react-bootstrap/Image';
 import { Form } from 'react-bootstrap';
 import './style.css';
 import Item from './item.js'
@@ -17,6 +12,7 @@ const Basket = ({
     updateProduct,
     handleEmptyBasket,
     RemoveItemFromBasket,
+    products,
 }) => {
     const [showSpinner, setShowSpinner] = useState(true);
     const loading = () => {
@@ -28,11 +24,11 @@ const Basket = ({
         }
         return <Empty />;
     };
-
-    if (!basketData.line_items || !basketData.line_items.length) return loading();
+    //console.log("produkts:", products)
+    if (!basketData.line_items || !basketData.line_items.length || !products.length) return loading();
     return (
         <div class="container-fluid">
-            <div class="row mx-3 justify-content-between">
+            <div class="row mx-xl-3 justify-content-between">
                 <div class="col">
                     <h2>Koszyk</h2>
                     <div className="d-flex justify-content-between align-items-end">
@@ -64,14 +60,15 @@ const Basket = ({
                                     product={item}
                                     updateProduct={updateProduct}
                                     RemoveItemFromBasket={RemoveItemFromBasket}
+                                    products={products}
                                 />
                             </Grid>
                         );
                     })}
 
                 </div>
-                <div className="col-auto summaryBg">
-                    <div className="m-4">
+                <div className="col-12 col-xl-auto summaryBg px-4 px-xl-0 summaryPanel">
+                    <div className="py-4 m-lg-4">
                         <h2>Podsumowanie</h2>
                         <hr />
                         <div className="d-flex justify-content-between">
@@ -79,12 +76,7 @@ const Basket = ({
                             <p className="font-weight-bold text-uppercase m-0">{basketData.subtotal.formatted_with_code}</p>
                         </div>
                         <Form className="my-5">
-                            <Form.Group className="text-uppercase" controlId="">
-                                <Form.Label>Wysyłka</Form.Label>
-                                <Form.Control as="select" custom>
-                                    <option>Przesyłka standardowa - 9.00 PLN</option>
-                                </Form.Control>
-                            </Form.Group>
+                            
                             <Form.Group className="text-uppercase" controlId="">
                                 <Form.Label>Kod promocyjny</Form.Label>
                                 <Form.Control placeholder="Wprowadź kod promocyjny..." />

@@ -110,3 +110,7 @@ h2 {
   color: #8b03da;
   font-size: 14px;
 }
+
+.summaryPanel {
+  width: 450px;
+}

@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { commerce } from "./lib/commerce";
+import { UserContext } from "./lib/UserProvider";
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Products from './components/Products/';
@@ -14,15 +15,18 @@ import ProductView from './components/ProductView/ProductView';
 import Checkout from './components/Checkout/Checkout';
 import Confirmation from './components/Checkout/Confirmation';
 import Profile from './components/Profile/Profile';
+import UserProvider from './lib/UserProvider';
 const App = () => {
+  const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [basketData, setBasketData] = useState([{}]);
   const [orderInfo, setOrderInfo] = useState({});
   const [orderError, setOrderError] = useState("");
 
   const fetchProducts = async () => {
-    const { data: products } = await commerce.products.list();
-    const { data: categories } = await commerce.categories.list();
+    const response = await commerce.products.list({ limit: 50 });
+    const { data: products } = await commerce.products.list({ limit: 50 });
+    const { data: categories } = await commerce.categories.list({ limit: 50 });
 
     const productsPerCategory = categories.reduce((acc, category) => {
       return [
@@ -37,6 +41,7 @@ const App = () => {
     }, []);
 
     setCategories((productsPerCategory) || []);
+    setProducts((response && response.data) || []);
   };
 
   const fetchBasketData = async () => {
@@ -93,72 +98,80 @@ const App = () => {
 
   }, []);
   console.log({ basketData });
+  const user = useContext(UserContext);
   return (
-    <Router >
-      <Switch>
-        <div>
-          <header>
-            <Navbar2 basketItems={basketData.total_items} totalCost={
-              (basketData.subtotal &&
-                basketData.subtotal.formatted_with_symbol) ||
-              "00.00"
-            } />
-          </header>
-          <Route exact path="/">
+    // user ?
+    // <ProfilePage />
+    //:
+    <UserProvider>
+      <Router >
+        <Switch>
+          <div>
             <header>
-              <Navbar basketItems={basketData.total_items} totalCost={
+              <Navbar2 basketItems={basketData.total_items} totalCost={
                 (basketData.subtotal &&
                   basketData.subtotal.formatted_with_symbol) ||
                 "00.00"
               } />
             </header>
-            <main>
-              <Intro />
-              <div id="google"></div>
-              <Products categories={categories} addProduct={addProduct} />
-              <Contact />
-            </main>
-          </Route>
-          <Route exact path="/basket">
-            <main>
-              <Basket
-                basketData={basketData}
-                updateProduct={updateProduct}
-                handleEmptyBasket={handleEmptyBasket}
-                RemoveItemFromBasket={RemoveItemFromBasket} />
-            </main>
-          </Route>
-          <Route exact path="/register">
-            <main>
-              <Register />
-            </main>
-          </Route>
-          <Route exact path="/product-view/:id">
-            <main>
-              <ProductView categories={categories} addProduct={addProduct} />
-            </main>
-          </Route>
-          <Route exact path="/checkout">
-            <main>
-              <Checkout orderInfo={orderInfo} orderError={orderError} basketData={basketData} handleCheckout={handleCheckout} />
-            </main>
-          </Route>
-          <Route exact path="/confirmation">
-            <main>
-              <Confirmation handleEmptyBasket={handleEmptyBasket} />
-            </main>
-          </Route>
-          <Route exact path="/profile">
-            <main>
-              <Profile />
-            </main>
-          </Route>
-          <footer>
-            <Footer />
-          </footer>
-        </div>
-      </Switch>
-    </Router>
+            <Route exact path="/">
+              <header>
+                <Navbar basketItems={basketData.total_items} totalCost={
+                  (basketData.subtotal &&
+                    basketData.subtotal.formatted_with_symbol) ||
+                  "00.00"
+                } />
+              </header>
+              <main>
+                <Intro />
+                <div id="google"></div>
+                <Products categories={categories} addProduct={addProduct} />
+                <Contact />
+              </main>
+            </Route>
+            <Route exact path="/basket">
+              <main>
+                <Basket
+                  basketData={basketData}
+                  updateProduct={updateProduct}
+                  handleEmptyBasket={handleEmptyBasket}
+                  RemoveItemFromBasket={RemoveItemFromBasket}
+                  products={products}
+                />
+              </main>
+            </Route>
+            <Route exact path="/register">
+              <main>
+                <Register />
+              </main>
+            </Route>
+            <Route exact path="/product-view/:id">
+              <main>
+                <ProductView categories={categories} addProduct={addProduct} products={products} />
+              </main>
+            </Route>
+            <Route exact path="/checkout">
+              <main>
+                <Checkout orderInfo={orderInfo} orderError={orderError} basketData={basketData} handleCheckout={handleCheckout} />
+              </main>
+            </Route>
+            <Route exact path="/confirmation">
+              <main>
+                <Confirmation handleEmptyBasket={handleEmptyBasket} />
+              </main>
+            </Route>
+            <Route exact path="/profile">
+              <main>
+                <Profile />
+              </main>
+            </Route>
+            <footer>
+              <Footer />
+            </footer>
+          </div>
+        </Switch>
+      </Router>
+    </UserProvider>
   );
 }
 

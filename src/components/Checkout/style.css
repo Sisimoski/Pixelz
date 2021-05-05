@@ -1,11 +1,15 @@
 .checkout {
     padding-top: 150px;
     padding-bottom: 15px;
-    height: 850px;
+    height: 100vh;
     font-family: 'Lato', sans-serif;
     background-image: linear-gradient(to right, #5421b5, #5e22b8, #6823ba, #7124bd, #7a25bf, #7f2dc1, #8534c4, #8a3bc6, #8e47c9, #9152cc, #955dcf, #9967d1);
 }
-  
+@media (max-width: 600px) {
+  .checkout {
+    height: 150vh;
+  }
+}
   .checkout .paper {
  
     max-width: 800px;

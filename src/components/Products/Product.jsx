@@ -17,7 +17,7 @@ const Product = ({ product, addProduct = () => { } }) => (
             <CardActionArea>
                 <CardMedia
                     component="img"
-                    height="300"
+                    height="380"
                     className="card-image"
                     image={product.media.source}
 

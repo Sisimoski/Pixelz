@@ -1,6 +1,6 @@
 import React from 'react'
 import baner from "../../media/baner3.png"
-import { Container, Typography, Button, Grid } from "@material-ui/core";
+import { Container, Button, Grid } from "@material-ui/core";
 import "./style.css"
 function Intro() {
     return (
