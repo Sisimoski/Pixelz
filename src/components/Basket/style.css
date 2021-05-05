@@ -87,11 +87,14 @@ h2 {
   height: 150px;
   object-fit: cover;
 }
+@media (max-width: 1400px){
+  .basketBannerContainer {
+    padding-top: 20px;
+  }
+  
+}
 @media (max-width: 1001px) {
  
-}
-
-
 .custom-button:hover {
   background-color: #bb86fc;
   color: #c9d1d9;
@@ -117,6 +120,8 @@ h2 {
 .summaryPanel {
   width: 450px;
 }
+
 .zabka{
   margin-top: -50px;
+
 }
