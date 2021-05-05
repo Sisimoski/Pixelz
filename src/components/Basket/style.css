@@ -16,6 +16,7 @@
   padding-top: 350px;
     justify-content: center;
     margin: auto;
+    font-size: 5px;
 }
 .emptyTekst{
   margin: auto;
@@ -30,7 +31,9 @@
   margin-left: 100px;
 }
 
-
+.shopping-button {
+  font-size: 20px;
+}
 a.shopping-button {
  font-weight: bolder;
     width: 20vw;
@@ -113,4 +116,7 @@ h2 {
 
 .summaryPanel {
   width: 450px;
+}
+.zabka{
+  margin-top: -50px;
 }

@@ -35,6 +35,7 @@ const Register = () => {
         setPostCode("");
         setCityName("");
         setPhoneNumber("");
+        alert("Uzytkownik został utworzony");
     };
     const onChangeHandler = event => {
         const { name, value } = event.currentTarget;
