@@ -78,7 +78,7 @@
     }
   }
 
-@media (min-width: 1001px) {
+@media (min-width: 951px) {
 .NavOptions
 {
     position: absolute;
@@ -192,10 +192,10 @@
 }
 
 
-@media (max-width: 1400px){
+@media (max-width: 1500px){
     .NavOptions
     {
-      margin-left: 350px;
+      margin-left: 400px;
       font-size: 20px;
       width: 30%;
     }
@@ -210,13 +210,32 @@
         margin-right: 0vh;
     }
     .navbarr .btn1 {
-      margin-left: -10%;
-      
-        
+      margin-left: -5%;
     }
- 
+    .NavOptions
+    {
+      font-size: 18px;
+      width: 35%;
+    }
+    .logo{
+        width: 32vh;
+        margin-top: -10px;
+        margin-bottom: -20px;
+        margin-left: 2vw;
+    }
 }
-@media (max-width: 992px){
+@media (max-width: 1050px){
+    .basketContainer{
+        margin-right: 2vh;
+       }
+       .NavOptions
+       {
+           width: 500px;
+           
+
+        }
+}
+@media (max-width: 950px){
     .NavOptions
     {
         margin:0;
