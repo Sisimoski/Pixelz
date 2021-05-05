@@ -7,8 +7,11 @@ body {
 }
 
 
-header{
+/* header{
   margin-bottom:10vw
+} */
+body {
+  padding-top: 100px;
 }
 html {
   scroll-behavior: smooth;

@@ -19,7 +19,7 @@ function Footer() {
                     <p className="m-0 text-dark">Szukamy pracownika. Wyślij CV na e-mail: pixelz@gmail.com</p>
                 </div>
                 {/* Mobile Social */}
-                <div className="d-md-none col-12 col-sm-5 mt-4 mt-md-0 text-center text-secondary">
+                <div className="d-md-none col-12 mt-4 mt-md-0 text-center text-secondary">
                     <i class="bi bi-instagram"></i>
                     <i class="bi bi-twitter"></i>
                     <i class="bi bi-facebook"></i>
