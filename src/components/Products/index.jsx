@@ -135,7 +135,7 @@ const Products = ({ categories, addProduct }) => {
                     else {
 
                         for (var i = 0; i <= 100; i++)
-                            for (var k = 0; k <= 10; k++)
+                            for (var k = 0; k <= 100; k++)
                                 if (typeof category.productsData[k] !== "undefined" && category.productsData[k].name.charAt(0).toUpperCase() == name.charAt(0).toUpperCase()) {
                                     { console.log("productsdata: ", category.productsData[i].name.charAt(i)) }
                                     return (

@@ -21,9 +21,11 @@ const Register = () => {
         try {
             const { user } = await auth.createUserWithEmailAndPassword(email, password);
             generateUserDocument(user, { displayName, names, surname, street, postCode, cityName, phoneNumber });
+            alert("Uzytkownik został utworzony");
         }
         catch (error) {
             setError('Error Signing up with email and password');
+            alert("Wystąpił błąd!");
         }
 
         setEmail("");

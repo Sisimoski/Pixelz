@@ -8,15 +8,15 @@ const Confirmation = ({ handleEmptyBasket, }) => {
         <div className="basketBannerContainer" onLoad={handleEmptyBasket}>
             <div className="emptyButton">
                 <Button className="shopping-button" component={Link} to="/">
-                    Kontynuuj zakupy!
+                    Kupuj dalej!
             </Button>
             </div>
             <div className="emptyTekst">
-                <Typography className="title" variant="h2">
+                <Typography className="title" variant="h3">
                     Dziękujemy
                     za Twój udany zakup!
         </Typography>
-                <img src={happy}></img>
+                <img className="zabka" src={happy}></img>
             </div>
         </div >
     )

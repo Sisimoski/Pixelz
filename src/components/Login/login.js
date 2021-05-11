@@ -10,19 +10,22 @@ const Login = () => {
     const [number, setNumber] = useState('fail');
     const signInWithEmailAndPasswordHandler = (event, email, password) => {
         event.preventDefault()
-        console.log("fst", number);
         auth.signInWithEmailAndPassword(email, password).catch(error => {
             setError("Error signing in with password and email!");
             console.error("Error signing in with password and email", error);
+            alert("Błąd danych logowania!");
             return setNumber("fail");
         });
-        console.log("2", number);
-        setNumber("noFail");
+
+        setNumber("noFail")
+
         console.log("3", number);
         if (number != "fail") {
-            console.log("xd")
+            alert("Zalogowano pomyślnie!")
             window.location = '/profile';
         }
+
+
     };
 
     const onChangeHandler = (event) => {
