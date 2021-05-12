@@ -30,7 +30,7 @@ app.use(express.json())
 const transporter = nodemailer.createTransport(sendGridTransport({
     auth:{api_key:SENDGRID_API}
   }))
-
+/*
   app.post('/send', (req, res) => {
     const {name, email, phoneN, message} = req.body
     transporter.sendMail ({
@@ -50,7 +50,7 @@ const transporter = nodemailer.createTransport(sendGridTransport({
  app.listen(PORT, () =>{
     console.log("server is running on", PORT)
   })
-  
+  */
 //TESTOWE STOP
 
 
