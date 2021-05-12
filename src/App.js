@@ -16,9 +16,9 @@ import Checkout from './components/Checkout/Checkout';
 import Confirmation from './components/Checkout/Confirmation';
 import Profile from './components/Profile/Profile';
 import UserProvider from './lib/UserProvider';
-
+import { response } from 'express'
 // TESTOWE START
-/*
+
 const express = require('express');
 const app = express();
 const nodemailer = require('nodemailer');
@@ -39,8 +39,8 @@ const transporter = nodemailer.createTransport(sendGridTransport({
       phoneN:phoneN,
       html:`<h3>${name} </h3> 
       <p>${message} </p>`
-    }).then(resp => {
-      res.json({resp})
+    }).then(response => {
+      res.json({response})
     })
     .catch(err => {
       console.log(err)
@@ -50,7 +50,7 @@ const transporter = nodemailer.createTransport(sendGridTransport({
  app.listen(PORT, () =>{
     console.log("server is running on", PORT)
   })
-  */
+  
 //TESTOWE STOP
 
 
