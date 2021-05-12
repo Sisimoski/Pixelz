@@ -7,7 +7,7 @@ import Avatar from '../../media/avatar1.png';
 const Profile = () => {
   return (
 
-    <div>
+    <div class="boxmain">
       <div class="container">
         <div class="view-account">
           <section class="module">
@@ -66,9 +66,8 @@ const Profile = () => {
             <div id="rightbox">
               <h3>Historia zakupów</h3>
               <div class="history">
-
               </div>
-
+              <br /><br />
             </div>
           </section>
           <br /><br />

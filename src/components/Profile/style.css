@@ -1,3 +1,6 @@
+.boxmain{
+  height: 140vh;
+}
 .title {
   color: #6e3b8f
 }
@@ -69,6 +72,7 @@
 .avatar-box {
   margin: 60px 0px;
   text-align:center;
+  
 }
 
 .avatar {
@@ -100,6 +104,9 @@ margin-top:20px;
 }
 
 @media (max-width: 1240px){
+  .boxmain{
+    height: 120vh;
+  }
   .module-title {
     padding-top: 100px;
     font-size: 3.5vw;
@@ -112,6 +119,7 @@ margin-top:20px;
     width:50%;
     font-size: 1.5vw;
     padding: 5px;
+    margin-bottom: 200px;
   }
   #rightbox {
     width:50%;
@@ -129,6 +137,9 @@ margin-top:20px;
   }
 }
 @media (max-width: 750px){
+  .boxmain{
+    height: 105vh;
+  }
   .module-title {
     padding-top: 120px;
   }
@@ -146,6 +157,9 @@ margin-top:20px;
   
 }
 @media (max-width: 600px){
+  .boxmain{
+    height: 90vh;
+  }
   .module-title {
     padding-top: 140px;
     font-size: 4vw;
