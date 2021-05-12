@@ -16,9 +16,9 @@ import Checkout from './components/Checkout/Checkout';
 import Confirmation from './components/Checkout/Confirmation';
 import Profile from './components/Profile/Profile';
 import UserProvider from './lib/UserProvider';
-import { response } from 'express'
+//import { response } from 'express'
 // TESTOWE START
-
+/*
 const express = require('express');
 const app = express();
 const nodemailer = require('nodemailer');
