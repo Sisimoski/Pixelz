@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import './style.css';
 import Avatar from '../../media/avatar1.png';
-
-
+import { UserContext } from '../../lib/UserProvider';
+import Spinner from '../Spinner/Spinner';
 
 const Profile = () => {
+  const [showSpinner, setShowSpinner] = useState(true);
+  const loading = () => {
+    setTimeout(() => {
+      setShowSpinner(false);
+    }, 5000);
+    if (showSpinner) {
+      return <Spinner />;
+    }
+  };
+  const user = useContext(UserContext);
+
+  console.log("user", user);
+  if (user == null) return loading();
+  const { displayName, email, cityName, names, phoneNumber, postCode, street, surname } = user;
   return (
 
     <div class="boxmain">
@@ -41,17 +55,17 @@ const Profile = () => {
                 <div id="right-leftbox">
                   <fieldset class="fieldset">
                     <br />
-                    <h5>jankowalski1@poczta.pl</h5>
-                    <h5>JanKowalski1</h5>
+                    <h5>{email}</h5>
+                    <h5>{displayName}</h5>
                   </fieldset>
                   <br /><br />
                   <fieldset class="fieldset">
-                    <h5>Jan</h5>
-                    <h5>Kowalski</h5>
-                    <h5>Malopolska 22</h5>
-                    <h5>45-301</h5>
-                    <h5>Opole</h5>
-                    <h5>789 456 123</h5>
+                    <h5>{names}</h5>
+                    <h5>{surname}</h5>
+                    <h5>{street}</h5>
+                    <h5>{postCode}</h5>
+                    <h5>{cityName}</h5>
+                    <h5>{phoneNumber}</h5>
                   </fieldset>
                   <br /><br />
 
