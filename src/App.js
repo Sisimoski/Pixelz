@@ -135,13 +135,13 @@ const App = () => {
     fetchBasketData();
 
   }, []);
-  console.log({ basketData });
+  console.log("danekoszyk", basketData);
   const user = useContext(UserContext);
   return (
-    // user ?
-    // <ProfilePage />
-    //:
     <UserProvider>
+
+
+
       <Router >
         <Switch>
           <div>
@@ -209,6 +209,8 @@ const App = () => {
           </div>
         </Switch>
       </Router>
+
+
     </UserProvider>
   );
 }
