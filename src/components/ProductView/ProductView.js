@@ -48,26 +48,6 @@ const ProductView = ({ addProduct, categories, products }) => {
             return <Spinner />;
         }
     };
-    /* function category() {
-         if (categories.length == 0)
-             categoryName = "Kategoria";
-         else {
-             var categoryName;
-             var k = 0, m = 0;
-             for (var i = 0; i < 4; i++) {
-                 if (product.id != categories[i].productsData[k].id) {
-                     if (k <= categories[i].productsData[k].length)
-                         k++;
-                 } else {
-                     m = i;
-                 }
- 
-             }
-             categoryName = categories[m].slug;
-         }
-         return categoryName.toUpperCase();
-     }
-     */
     function category2() {
         if (products.length == 0)
             categoryName = "Kategoria";
@@ -126,7 +106,7 @@ const ProductView = ({ addProduct, categories, products }) => {
                                         </div>
                                     </div>
                                 </div>
-                                <hr/>
+                                <hr />
                             </div>
                         </div>
                         <div className="row">

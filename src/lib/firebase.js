@@ -19,7 +19,14 @@ export const firestore = firebase.firestore();
 
 const provider = new firebase.auth.GoogleAuthProvider();
 export const signInWithGoogle = () => {
-    auth.signInWithPopup(provider);
+    try {
+        auth.signInWithPopup(provider);
+        alert("Zalogowano pomyślnie!")
+        window.location = '/profile';
+    } catch {
+
+    }
+
 };
 
 export const generateUserDocument = async (user, additionalData) => {

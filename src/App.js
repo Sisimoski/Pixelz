@@ -135,7 +135,7 @@ const App = () => {
     fetchBasketData();
 
   }, []);
-  console.log({ basketData });
+  console.log("danekoszyk", basketData);
   const user = useContext(UserContext);
   return (
     <UserProvider>
