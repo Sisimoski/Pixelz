@@ -10,7 +10,18 @@
     position: fixed;
     background-color: white;
   }
-  
+  .spinner2 {
+    top: 10%;
+    left: 25%;
+    width: 50%;
+    height: 90%;
+    display: flex;
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color:transparent;
+  }
   .spinner > div {
     color: #c9d1d9;
   }
