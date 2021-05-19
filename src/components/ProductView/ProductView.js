@@ -119,29 +119,6 @@ const ProductView = ({ addProduct, categories, products }) => {
                     </div>
                 </div>
 
-                {/* <div className="row mx-5">
-                    <div className="col">
-                        <h2>{product.name}</h2>
-                        <h4 >{category2()}</h4>
-                        <Image src={product.src} className="productScreens" fluid />
-                        <div className="d-flex justify-content-between align-items-center mt-5">
-                            <p className="productPrice font-weight-light">{product.price}</p>
-                            <div className="ml-auto mr-3 d-flex align-items-center">
-                                <Button variant="outline-dark" onClick={() => { handleQuantity("decries"); }}><i class="bi bi-dash"></i></Button>
-                                <p className="mx-3 my-0">Ilość: {quantity}</p>
-                                <Button variant="outline-dark" onClick={() => { handleQuantity("increase"); }}><i class="bi bi-plus"></i></Button>
-                            </div>
-                            <Button variant="pixSecondary" onClick={() => { addProduct(product.id, quantity); }}>
-                                <ShoppingCart /> Dodaj do koszyka
-                        </Button>
-                        </div>
-                        <hr />
-                    </div>
-                    <div className="productDescription">
-                        <p><Typography dangerouslySetInnerHTML={createMarkup(product.description)} /></p>
-                    </div>
-                </div> */}
-
             </div>
         </div >
     )
