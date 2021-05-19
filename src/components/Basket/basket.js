@@ -28,7 +28,7 @@ const Basket = ({
     if (!basketData.line_items || !basketData.line_items.length || !products.length) return loading();
     return (
         <div class="container-fluid">
-            <div class="row mx-xl-3 justify-content-between">
+            <div class="row mt-4 mx-xl-3 justify-content-between">
                 <div class="col">
                     <h2>Koszyk</h2>
                     <div className="d-flex justify-content-between align-items-end">
