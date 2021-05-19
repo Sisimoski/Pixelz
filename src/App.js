@@ -16,6 +16,8 @@ import Checkout from './components/Checkout/Checkout';
 import Confirmation from './components/Checkout/Confirmation';
 import Profile from './components/Profile/Profile';
 import UserProvider from './lib/UserProvider';
+
+/*
 import { response } from 'express'
 // TESTOWE START
 
@@ -30,7 +32,7 @@ app.use(express.json())
 const transporter = nodemailer.createTransport(sendGridTransport({
     auth:{api_key:SENDGRID_API}
   }))
-/*
+
   app.post('/send', (req, res) => {
     const {name, email, phoneN, message} = req.body
     transporter.sendMail ({
