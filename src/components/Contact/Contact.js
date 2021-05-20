@@ -89,7 +89,9 @@ render(){
                     </div>
                 </div>
                 <div class="col-xs-12">
-                    <div class="btn-lrg submit-btn"> <button type="submit" > Wyślij wiadomość </button></div>
+                    <div class="btn-lrg submit-btn"> 
+                        <button type="submit" className="noStyle">Wyślij wiadomość</button>
+                    </div>
                 </div>
             </div>
             </form>
