@@ -88,8 +88,8 @@ render(){
                         <label>Wiadomość</label>
                     </div>
                 </div>
-                <div class="col-xs-12">
-                    <div class="btn-lrg submit-btn"> 
+                <div class="col-12">
+                    <div class="submit-btn"> 
                         <button type="submit" className="noStyle">Wyślij wiadomość</button>
                     </div>
                 </div>
