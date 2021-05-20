@@ -32,17 +32,6 @@ function Footer() {
                 </div>
             </div>
         </div>
-
-        // <div className="footerContainer">
-        //     <div className="leftside">
-        //         <p> Dane Kontaktowe:</p>
-        //         <p> asdasd</p>
-        //         <p> asdasd</p>
-        //     </div>
-        //     <div className="rightside">
-        //         <img className="logo" alt="img" src={logo} />
-        //     </div>
-        // </div>
     )
 }
 
