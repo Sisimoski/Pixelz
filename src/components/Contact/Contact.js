@@ -90,7 +90,7 @@ render(){
                 </div>
                 <div class="col-12 text-center">
                     <div class="submit-btn"> 
-                        <button type="submit" className="btn noStyle">Wyślij wiadomość</button>
+                        <button type="submit" className="noStyle">Wyślij wiadomość</button>
                     </div>
                 </div>
             </div>
