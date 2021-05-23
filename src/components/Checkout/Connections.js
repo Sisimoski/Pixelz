@@ -1,6 +1,5 @@
 import CheckoutForm from "./CheckoutForm";
 import Booking from "./Booking";
-//import Confirmation from "./Confirmation";
 import Payment from "./Payment";
 import Confirmation from "./Confirmation";
 

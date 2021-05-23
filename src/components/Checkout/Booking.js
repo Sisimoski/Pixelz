@@ -6,7 +6,6 @@ import {
     Typography,
     ListItemText,
 } from "@material-ui/core";
-import { NavItem } from "react-bootstrap";
 
 const Booking = ({ user, checkoutData, handleBackStep, handleNextStep }) => {
     console.log({ user });
