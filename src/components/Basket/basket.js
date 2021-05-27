@@ -76,7 +76,7 @@ const Basket = ({
                             <p className="font-weight-bold text-uppercase m-0">{basketData.subtotal.formatted_with_code}</p>
                         </div>
                         <Form className="my-5">
-                            
+
                             <Form.Group className="text-uppercase" controlId="">
                                 <Form.Label>Kod promocyjny</Form.Label>
                                 <Form.Control placeholder="Wprowadź kod promocyjny..." />
@@ -99,42 +99,6 @@ const Basket = ({
                 </div>
             </div>
         </div>
-
-        // <Container id="basket">
-        //     <Grid container justify="center" spacing={4}>
-        //         {basketData.line_items.map((item) => {
-        //             return (
-        //                 <Grid key={item.id} item xs={12} sm={6} md={4}>
-        //                     <CustomCard
-        //                         basket
-        //                         product={item}
-        //                         updateProduct={updateProduct}
-        //                         RemoveItemFromBasket={RemoveItemFromBasket}
-        //                     />
-        //                 </Grid>
-        //             );
-        //         })}
-        //     </Grid>
-        //     <div className="actions">
-        //         <Button
-        //             size="small"
-        //             color="secondary"
-        //             variant="contained"
-        //             onClick={handleEmptyBasket}
-        //         >
-        //             Empty Basket
-        //   </Button>
-
-        //         <Button
-        //             size="small"
-        //             variant="contained"
-        //             component={Link}
-        //             to="/checkout"
-        //         >
-        //             Checkout
-        //   </Button>
-        //     </div>
-        // </Container>
     );
 };
 
