@@ -58,10 +58,13 @@ async handleSubmit(event){
 }
 render(){
     return (
+        
         <div class="contactContainer">
+             <Container id="contact">
+            </Container>
            <form onSubmit={this.handleSubmit.bind(this)} method="POST" name="contact-form">
             <div class="row col-xs-12 col-sm-12">
-                <h1>Skontaktuj się</h1>
+                <h1>Masz pytania? - Skontaktuj się!</h1>
             </div>
             <div class="row input-container">
                 <div class="col-xs-12 col-sm-12">
