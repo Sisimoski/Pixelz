@@ -19,7 +19,6 @@ const Products = ({ categories, addProduct }) => {
     if (!categories.length) return <Spinner2 />;
     return (
         <div>
-
             <Container id="products">
             </Container>
             <div className="napis">
@@ -61,7 +60,6 @@ const Products = ({ categories, addProduct }) => {
                     <button ><SearchIcon /></button>
                 </form>
             </div>
-
             {console.log(categories)}
 
             <div className="product-container">
@@ -136,7 +134,6 @@ const Products = ({ categories, addProduct }) => {
                         }
                     }
                     else {
-
                         for (var i = 0; i <= 100; i++)
                             for (var k = 0; k <= 100; k++)
                                 if (typeof category.productsData[k] !== "undefined" && category.productsData[k].name.charAt(0).toUpperCase() == name.charAt(0).toUpperCase()) {
@@ -145,25 +142,18 @@ const Products = ({ categories, addProduct }) => {
                                         <>
                                             {
                                                 category.productsData.map((product) => {
-                                                    //{ console.log("produkt: ", product) }
                                                     if (product.name.charAt(i).toUpperCase() == name.charAt(i).toUpperCase())
                                                         return <Product product={product} addProduct={addProduct} />
 
                                                 })
-
                                             }
                                         </>
                                     )
                                 }
-
-
-                    }
-                })}
-
+                         }
+                 })}
             </div>
-
         </div >
     )
 }
-
 export default Products
