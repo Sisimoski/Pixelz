@@ -48,10 +48,8 @@ const Profile = () => {
                     <h5 class="title">Numer telefonu</h5>
                   </fieldset>
                 </div>
-
                 <div id="middlebox">
                 </div>
-
                 <div id="right-leftbox">
                   <fieldset class="fieldset">
                     <br />
@@ -67,11 +65,13 @@ const Profile = () => {
                     <h5>{cityName}</h5>
                     <h5>{phoneNumber}</h5>
                   </fieldset>
-                  <br /><br />
+                  <br />
+                  <br />
                   <div class="form-group">
                     <input class="buttonS" type="submit" value="Zmiana hasła" />
                   </div>
-                  <br /><br />
+                  <br />
+                  <br />
                 </div>
 
               </div>
