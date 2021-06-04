@@ -101,80 +101,75 @@ const App = () => {
   console.log("danekoszyk", basketData);
   const user = useContext(UserContext);
   return (
-    <UserProvider>
-
-
-
-      <Router >
-        <Switch>
-          <div>
+    //<UserProvider>
+    <Router >
+      <Switch>
+        <div>
+          <header>
+            <Navbar2 basketItems={basketData.total_items} totalCost={
+              (basketData.subtotal &&
+                basketData.subtotal.formatted_with_symbol) ||
+              "00.00"
+            } />
+          </header>
+          <Route exact path="/">
             <header>
-              <Navbar2 basketItems={basketData.total_items} totalCost={
+              <Navbar basketItems={basketData.total_items} totalCost={
                 (basketData.subtotal &&
                   basketData.subtotal.formatted_with_symbol) ||
                 "00.00"
               } />
             </header>
-            <Route exact path="/">
-              <header>
-                <Navbar basketItems={basketData.total_items} totalCost={
-                  (basketData.subtotal &&
-                    basketData.subtotal.formatted_with_symbol) ||
-                  "00.00"
-                } />
-              </header>
-              <main>
-                <Intro />
-                <div id="google"></div>
-                <Products categories={categories} addProduct={addProduct} />
-                <Contact />
-              </main>
-            </Route>
-            <Route exact path="/basket">
-              <main>
-                <Basket
-                  basketData={basketData}
-                  updateProduct={updateProduct}
-                  handleEmptyBasket={handleEmptyBasket}
-                  RemoveItemFromBasket={RemoveItemFromBasket}
-                  products={products}
-                />
-              </main>
-            </Route>
-            <Route exact path="/register">
-              <main>
-                <Register />
-              </main>
-            </Route>
-            <Route exact path="/product-view/:id">
-              <main>
-                <ProductView categories={categories} addProduct={addProduct} products={products} />
-              </main>
-            </Route>
-            <Route exact path="/checkout">
-              <main>
-                <Checkout orderInfo={orderInfo} orderError={orderError} basketData={basketData} handleCheckout={handleCheckout} />
-              </main>
-            </Route>
-            <Route exact path="/confirmation">
-              <main>
-                <Confirmation handleEmptyBasket={handleEmptyBasket} />
-              </main>
-            </Route>
-            <Route exact path="/profile">
-              <main>
-                <Profile />
-              </main>
-            </Route>
-            <footer>
-              <Footer />
-            </footer>
-          </div>
-        </Switch>
-      </Router>
-
-
-    </UserProvider>
+            <main>
+              <Intro />
+              <div id="google"></div>
+              <Products categories={categories} addProduct={addProduct} />
+              <Contact />
+            </main>
+          </Route>
+          <Route exact path="/basket">
+            <main>
+              <Basket
+                basketData={basketData}
+                updateProduct={updateProduct}
+                handleEmptyBasket={handleEmptyBasket}
+                RemoveItemFromBasket={RemoveItemFromBasket}
+                products={products}
+              />
+            </main>
+          </Route>
+          <Route exact path="/register">
+            <main>
+              <Register />
+            </main>
+          </Route>
+          <Route exact path="/product-view/:id">
+            <main>
+              <ProductView categories={categories} addProduct={addProduct} products={products} />
+            </main>
+          </Route>
+          <Route exact path="/checkout">
+            <main>
+              <Checkout orderInfo={orderInfo} orderError={orderError} basketData={basketData} handleCheckout={handleCheckout} />
+            </main>
+          </Route>
+          <Route exact path="/confirmation">
+            <main>
+              <Confirmation handleEmptyBasket={handleEmptyBasket} />
+            </main>
+          </Route>
+          <Route exact path="/profile">
+            <main>
+              <Profile />
+            </main>
+          </Route>
+          <footer>
+            <Footer />
+          </footer>
+        </div>
+      </Switch>
+    </Router>
+    // </UserProvider>
   );
 }
 
