@@ -53,7 +53,7 @@ const Profile = () => {
                 <div id="right-leftbox">
                   <fieldset class="fieldset">
                     <br />
-                    <h5>{email}</h5>
+                    <h5>{email} </h5>
                     <h5>{displayName}</h5>
                   </fieldset>
                   <br /><br />
