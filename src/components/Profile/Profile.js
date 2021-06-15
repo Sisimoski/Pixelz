@@ -15,7 +15,6 @@ const Profile = () => {
     }
   };
   const user = useContext(UserContext);
-
   console.log("user", user);
   if (user == null) return loading();
   const { displayName, email, cityName, names, phoneNumber, postCode, street, surname } = user;
@@ -73,7 +72,6 @@ const Profile = () => {
                   <br />
                   <br />
                 </div>
-
               </div>
             </div>
 
@@ -81,15 +79,14 @@ const Profile = () => {
               <h3>Historia zakupów</h3>
               <div class="history">
               </div>
-              <br /><br />
+              <br/><br/>
             </div>
 
           </section>
-          <br /><br />
+          <br/><br/>
         </div>
       </div>
     </div>
   )
 }
-
 export default Profile
