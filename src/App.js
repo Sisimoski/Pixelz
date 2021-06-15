@@ -101,7 +101,6 @@ const App = () => {
   console.log("danekoszyk", basketData);
   const user = useContext(UserContext);
   return (
-    //<UserProvider>
     <Router >
       <Switch>
         <div>
@@ -169,7 +168,6 @@ const App = () => {
         </div>
       </Switch>
     </Router>
-    // </UserProvider>
   );
 }
 

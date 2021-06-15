@@ -54,11 +54,11 @@ const Profile = () => {
                   <fieldset class="fieldset">
                     <br />
                     <h5>{email} </h5>
-                    <h5>{displayName}</h5>
+                    <h5>{displayName} </h5>
                   </fieldset>
                   <br /><br />
                   <fieldset class="fieldset">
-                    <h5>{names}</h5>
+                    <h5>{names} </h5>
                     <h5>{surname}</h5>
                     <h5>{street}</h5>
                     <h5>{postCode}</h5>
