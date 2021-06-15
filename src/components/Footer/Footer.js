@@ -5,8 +5,8 @@ function Footer() {
         <div className="container-fluid footerBg border-top">
             <div className="row footerPadding">
                 <div className="col-12 col-md-3">
-                    <h6 className="mb-4 text-uppercase text-muted">Lorem ipsum</h6>
-                    <p className="m-0 text-dark">Lorem ipsum lorem ipsum lorem ipsum.</p>
+                    <h6 className="mb-4 text-uppercase text-muted">Pixelz</h6>
+                    <p className="m-0 text-dark">Twój najlepszy internetowy sklep z grami. Kupisz gry na najpopularniejsze platformy w najniższych cenach!</p>
                 </div>
                 <div className="col-12 col-md-3 mt-4 mt-md-0">
                     <h6 className="mb-4 text-uppercase text-muted">Kontakt</h6>
